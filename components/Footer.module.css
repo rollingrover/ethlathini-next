@@ -1,0 +1,48 @@
+.footer { background: var(--forest); }
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.brand { display: flex; align-items: center; gap: 1rem; }
+.logo {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--cream);
+  font-weight: 500;
+}
+.loc { font-size: 12px; color: rgba(196,97,42,0.8); margin-top: 3px; }
+.nav { display: flex; flex-direction: column; gap: 0.5rem; }
+.nav a { font-size: 13px; color: rgba(240,224,192,0.6); transition: color 0.15s; }
+.nav a:hover { color: var(--cream); }
+.contact { display: flex; flex-direction: column; gap: 0.5rem; }
+.contact a { font-size: 13px; color: rgba(240,224,192,0.6); transition: color 0.15s; }
+.contact a:hover { color: var(--cream); }
+.partners { border-top: 1px solid rgba(196,97,42,0.15); padding: 1rem 0; }
+.partnersInner { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.partnersLabel { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ochre); white-space: nowrap; }
+.partnersList { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.partner { font-size: 12px; color: rgba(240,224,192,0.5); transition: color 0.15s; }
+.partner:hover { color: var(--cream); }
+.base { border-top: 1px solid rgba(255,255,255,0.06); padding: 1rem 0; }
+.baseInner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 11px;
+  color: rgba(240,224,192,0.3);
+}
+.baseInner a { color: rgba(196,97,42,0.6); transition: color 0.15s; }
+.baseInner a:hover { color: var(--terracotta); }

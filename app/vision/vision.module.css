@@ -1,0 +1,552 @@
+
+.hero{position:relative;min-height:50vh;display:flex;align-items:flex-end;overflow:hidden}
+.heroBg{object-fit:cover;object-position:center 30%}
+.heroOverlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,40,14,0.3) 0%,rgba(20,40,14,0.8) 100%)}
+.heroContent{position:relative;z-index:1;padding-bottom:3rem;padding-top:4rem}
+.heroContent h1{font-family:var(--font-display);font-size:clamp(28px,5vw,52px);font-weight:500;color:var(--cream);margin-top:0.4rem;line-height:1.2}
+.heroContent h1 em{color:var(--terracotta)}
+.heroSub{font-size:15px;color:rgba(240,224,192,0.7);margin-top:0.5rem}
+.h2{font-family:var(--font-display);font-size:clamp(22px,3vw,34px);font-weight:500;color:var(--forest);margin:0.4rem 0 1.5rem}
+.pillars{padding:var(--py) 0;background:var(--cream-bg)}
+.pillarsSub{font-size:15px;color:var(--bark);max-width:600px;line-height:1.7;margin-bottom:2rem}
+.pillarsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.pillar{background:#fff;border-radius:var(--r-md);padding:1.5rem;border:1px solid rgba(196,97,42,0.15)}
+.pillarIcon{font-size:28px;margin-bottom:0.75rem}
+.pillar h3{font-size:16px;font-weight:600;color:var(--forest);margin-bottom:0.5rem}
+.pillar p{font-size:13px;color:var(--bark);line-height:1.6}
+.building{padding:var(--py) 0;background:#fff}
+.buildingInner{display:flex;flex-direction:column;gap:1.5rem}
+.buildingGrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:600px){.buildingGrid{grid-template-columns:1fr}}
+.buildingCol h4{font-size:15px;font-weight:600;color:var(--forest);margin-bottom:0.75rem}
+.buildingCol ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.buildingCol li{font-size:14px;color:var(--bark)}
+.cta{background:var(--forest);padding:var(--py) 0}
+.ctaInner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem}
+.ctaInner h2{font-family:var(--font-display);font-size:clamp(24px,4vw,40px);font-weight:500;color:var(--cream)}
+.ctaInner p{font-size:14px;color:rgba(240,224,192,0.55);max-width:360px}
+.ctaBtns{display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center}
+/* ── Building Section ───────────────────────── */
+.building {
+  padding: 4rem 0;
+  background: #f9f7f3;
+}
+
+.buildingInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.buildingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.buildingCol {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.buildingColTitle {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1a2e1c;
+  font-size: 1.1rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(196, 135, 74, 0.2);
+  padding-bottom: 0.75rem;
+}
+
+.buildingIconGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.buildingIconItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  background: #f9f7f3;
+  transition: background 0.2s ease;
+}
+
+.buildingIconItem:hover {
+  background: #f0ebe4;
+}
+
+.buildingIconWrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.buildingIconImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.buildingIconLabel {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: #3a3a3a;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 1024px) {
+  .buildingGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .buildingIconGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .building {
+    padding: 2.5rem 0;
+  }
+
+  .buildingCol {
+    padding: 1.25rem;
+  }
+
+  .buildingIconGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .buildingIconItem {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .buildingIconWrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .buildingIconImg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .buildingIconLabel {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .buildingIconGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ── Hero ──────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.heroBg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 20, 12, 0.75) 0%, rgba(26, 46, 28, 0.6) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+}
+
+.hero h1 em {
+  color: #C4874A;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.heroSub {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Pillars ───────────────────────────────── */
+.pillars {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.h2 {
+  font-size: 2.2rem;
+  color: #1a2e1c;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.pillarsSub {
+  max-width: 700px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin: 0.5rem auto 2.5rem;
+  text-align: center;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.pillar {
+  background: #f9f7f3;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  border-top: 4px solid #C4874A;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.pillarIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pillarIconImg {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.pillar h3 {
+  margin: 0 0 0.75rem;
+  color: #1a2e1c;
+  font-size: 1.2rem;
+}
+
+.pillar p {
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Building Section ───────────────────────── */
+.building {
+  padding: 4rem 0;
+  background: #f9f7f3;
+}
+
+.buildingInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.buildingGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.buildingCol {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.buildingColTitle {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1a2e1c;
+  font-size: 1.1rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(196, 135, 74, 0.2);
+  padding-bottom: 0.75rem;
+}
+
+.buildingIconGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.buildingIconItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  background: #f9f7f3;
+  transition: background 0.2s ease;
+}
+
+.buildingIconItem:hover {
+  background: #f0ebe4;
+}
+
+.buildingIconWrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.buildingIconImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.buildingIconLabel {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: #3a3a3a;
+}
+
+/* ── CTA ── */
+.cta {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #1a2e1c, #2d4a2f);
+  color: #fff;
+  text-align: center;
+}
+
+.ctaInner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 1024px) {
+  .pillarsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .buildingGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .buildingIconGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroSub {
+    font-size: 1rem;
+  }
+
+  .pillars {
+    padding: 2.5rem 0;
+  }
+
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .pillar {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .pillarIconImg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .h2 {
+    font-size: 1.8rem;
+  }
+
+  .building {
+    padding: 2.5rem 0;
+  }
+
+  .buildingCol {
+    padding: 1.25rem;
+  }
+
+  .buildingIconGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .buildingIconItem {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .buildingIconWrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .buildingIconImg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .buildingIconLabel {
+    font-size: 0.7rem;
+  }
+
+  .cta {
+    padding: 2.5rem 0;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .ctaBtns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaBtns a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .buildingIconGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ── Aerial Section ─────────────────────────── */
+.aerial {
+  padding: 4rem 0;
+  background: #f9f7f3;
+}
+
+.aerialText {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.aerialDesc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  max-width: 700px;
+  margin: 0.5rem auto 1rem;
+}
+
+.aerialNote {
+  font-size: 0.95rem;
+  color: #8a8a8a;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.aerialImage {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  background: #e8e4de;
+}
+
+.aerialImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .aerial {
+    padding: 2.5rem 0;
+  }
+
+  .aerialDesc {
+    font-size: 0.95rem;
+  }
+
+  .aerialImage {
+    border-radius: 8px;
+  }
+}
