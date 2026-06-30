@@ -5,7 +5,7 @@ import styles from './about.module.css'
 export const metadata = pageMeta({
   path: '/about',
   title: 'About — Forest campsite in Hluhluwe, KZN',
-  description: "Ethlathini Rest Camp is a mahogany and fig forest campsite 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Our story, our community, our honest journey.",
+  description: 'Ethlathini Rest Camp is a mahogany and fig forest campsite 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Our story, our community, our honest journey.',
 })
 
 export default function AboutPage() {
@@ -14,13 +14,13 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <Image src="/images/social_post_forest.jpg" alt="Ethlathini forest canopy Hluhluwe" fill className={styles.heroBg} sizes="100vw" priority />
         <div className={styles.heroOverlay} />
-        <div className={"wrap " + styles.heroContent}>
+        <div className={'wrap ' + styles.heroContent}>
           <span className="eyebrow" style={{color:"#C4874A"}}>About Ethlathini</span>
           <h1>A forest on a hillside,<br /><em>growing something real</em></h1>
         </div>
       </section>
       <section className={styles.body}>
-        <div className={"wrap " + styles.bodyInner}>
+        <div className={'wrap ' + styles.bodyInner}>
           <div className={styles.text}>
             <h2>Ethlathini — &quot;In the Forest&quot;</h2>
             <p>Nestled in a lush canopy of <strong>mahogany, wild fig, and tree aloe</strong> on a hillside just off the main road to Memorial Gate, Ethlathini Rest Camp is a growing eco-friendly destination rooted in KwaZulu-Natal and the heart of the Hluhluwe community.</p>

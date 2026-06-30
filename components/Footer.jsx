@@ -13,7 +13,7 @@ const PARTNERS = [
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={`wrap ${styles.inner}`}>
+      <div className={'wrap ' + styles.inner}>
         {/* Brand */}
         <div className={styles.brand}>
           <Image
@@ -49,7 +49,7 @@ export default function Footer() {
 
       {/* Partners */}
       <div className={styles.partners}>
-        <div className={`wrap ${styles.partnersInner}`}>
+        <div className={'wrap ' + styles.partnersInner}>
           <span className={styles.partnersLabel}>Our Partners</span>
           <div className={styles.partnersList}>
             {PARTNERS.map(p => (
@@ -63,7 +63,7 @@ export default function Footer() {
 
       {/* Base */}
       <div className={styles.base}>
-        <div className={`wrap ${styles.baseInner}`}>
+        <div className={'wrap ' + styles.baseInner}>
           <span>© {new Date().getFullYear()} {SITE.name}</span>
           <span>2km from Hluhluwe-iMfolozi Memorial Gate · Africa&apos;s oldest game reserve</span>
           <span>

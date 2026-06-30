@@ -15,14 +15,14 @@ export default function DreamPage() {
       <section className={styles.hero}>
         <Image src="/images/social_post_forest.jpg" alt="Ethlathini forest" fill className={styles.heroBg} sizes="100vw" priority />
         <div className={styles.heroOverlay} />
-        <div className={"wrap " + styles.heroContent}>
+        <div className={'wrap ' + styles.heroContent}>
           <span className="eyebrow" style={{color:"#C4874A"}}>The Dream</span>
           <h1>Getting Back on<br /><em>the Right Path</em></h1>
           <p className={styles.heroSub}>A second chance. A community that believed. A purpose found.</p>
         </div>
       </section>
       <section className={styles.body}>
-        <div className={"wrap " + styles.bodyInner}>
+        <div className={'wrap ' + styles.bodyInner}>
           <div className={styles.text}>
             <p>We came to Hluhluwe carrying a dream. But somewhere along the way, we trusted the wrong people. Slowly, they stripped away our direction and our hope. We drifted far from the path we were meant to walk.</p>
             
@@ -63,7 +63,7 @@ export default function DreamPage() {
           </div>
           <div className={styles.sidebar}>
             <Image src="/images/logo_stacked.jpg" alt="Ethlathini" width={180} height={216} className={styles.logo} />
-            <div className={styles.card + " " + styles.highlight}>
+            <div className={styles.card + ' ' + styles.highlight}>
               <div className={styles.cardLabel}>The Question</div>
               <div className={styles.cardVal}>&quot;Can you build a skills center?&quot;</div>
               <div className={styles.cardNote}>— The Mdledshe family</div>
@@ -79,7 +79,7 @@ export default function DreamPage() {
                 <div className={styles.cardNote}>{c.note}</div>
               </div>
             ))}
-            <Link href="/book" className={"btn-primary " + styles.dreamCta}>🌿 Book a site & support the dream</Link>
+            <Link href="/book" className={'btn-primary ' + styles.dreamCta}>🌿 Book a site & support the dream</Link>
           </div>
         </div>
       </section>
