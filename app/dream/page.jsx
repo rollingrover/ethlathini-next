@@ -28,7 +28,7 @@ export default function DreamPage() {
             
             <p>Through divine timing, the <strong>Mdledshe family</strong> came into our lives — and with them, the truth about the people we had been trusting. By the time they entered our lives, we had nothing left to offer but a story of failure and hearts that still believed in something better.</p>
             
-            <p>Yet they opened their land to us. They asked nothing in return. They simply asked one question: <em>"Can you build some kind of skills development center?"</em></p>
+            <p>Yet they opened their land to us. They asked nothing in return. They simply asked one question: <em>&quot;Can you build some kind of skills development center?&quot;</em></p>
             
             <p>That question brought us back to life. Because that was the dream we had before we lost our way — a place where people could learn, grow, and find their own path. A place that gave back to the community that was now giving us a second chance.</p>
             
@@ -65,7 +65,7 @@ export default function DreamPage() {
             <Image src="/images/logo_stacked.jpg" alt="Ethlathini" width={180} height={216} className={styles.logo} />
             <div className={styles.card + " " + styles.highlight}>
               <div className={styles.cardLabel}>The Question</div>
-              <div className={styles.cardVal}>"Can you build a skills center?"</div>
+              <div className={styles.cardVal}>&quot;Can you build a skills center?&quot;</div>
               <div className={styles.cardNote}>— The Mdledshe family</div>
             </div>
             {[

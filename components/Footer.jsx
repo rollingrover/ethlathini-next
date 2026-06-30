@@ -65,7 +65,7 @@ export default function Footer() {
       <div className={styles.base}>
         <div className={`wrap ${styles.baseInner}`}>
           <span>© {new Date().getFullYear()} {SITE.name}</span>
-          <span>2km from Hluhluwe-iMfolozi Memorial Gate · Africa's oldest game reserve</span>
+          <span>2km from Hluhluwe-iMfolozi Memorial Gate · Africa&apos;s oldest game reserve</span>
           <span>
             Web design by{' '}
             <a href="https://rollingrover.co.za" target="_blank" rel="noopener noreferrer">

@@ -39,7 +39,7 @@ const INCLUSIONS = [
 ]
 
 const FAQS = [
-  { q:'How far from the park gate?', a:'2km from Memorial Gate — you\'re inside Hluhluwe-iMfolozi within 5 minutes of leaving camp.' },
+  { q:'How far from the park gate?', a:'2km from Memorial Gate — you&apos;re inside Hluhluwe-iMfolozi within 5 minutes of leaving camp.' },
   { q:'Are pets allowed?', a:'Yes — well-behaved dogs on a lead. Note: pets cannot enter the park itself.' },
   { q:'Do sites have power?', a:'Currently only power points in the main house for charging. Bring your own extension lead.' },
   { q:'Can we book just one night?', a:'Absolutely. A 2-night minimum may apply over peak school holidays.' },
@@ -230,7 +230,7 @@ export default function BookPage() {
               <div className={styles.success}>
                 <div style={{fontSize:40}}>🌿</div>
                 <h3>Booking request received!</h3>
-                <p>We'll be in touch within 4 hours to confirm your site and send the deposit invoice.</p>
+                <p>We&apos;ll be in touch within 4 hours to confirm your site and send the deposit invoice.</p>
               </div>
             ) : (
               <form className={styles.form} onSubmit={e => { e.preventDefault(); setSubmitted(true) }}>

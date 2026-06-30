@@ -22,7 +22,7 @@ export default function AboutPage() {
       <section className={styles.body}>
         <div className={"wrap " + styles.bodyInner}>
           <div className={styles.text}>
-            <h2>Ethlathini — "In the Forest"</h2>
+            <h2>Ethlathini — &quot;In the Forest&quot;</h2>
             <p>Nestled in a lush canopy of <strong>mahogany, wild fig, and tree aloe</strong> on a hillside just off the main road to Memorial Gate, Ethlathini Rest Camp is a growing eco-friendly destination rooted in KwaZulu-Natal and the heart of the Hluhluwe community.</p>
             <h3>The Place</h3>
             <p>The property sits on a hillside with the forest canopy breaking through. Tree aloes stand tall above the fig trees, and the mahogany provide deep, cool shade for the campsites below. When we arrived, the land was <strong>completely overgrown</strong> — chromolaena and lantana had taken over. We are still fighting that bush today, clearing metre by metre.</p>
@@ -31,12 +31,12 @@ export default function AboutPage() {
             <p><strong>Ablution facilities are under development</strong> — self-sufficient overlanders only at this stage.</p>
             <div className={styles.location}>
               <h3>Our Location</h3>
-              <p>Just <strong>2km from Memorial Gate, Hluhluwe-iMfolozi Park</strong> — Africa oldest proclaimed game reserve (established 1895). Big 5 country, the last major stronghold of the southern white rhino, and one of the most biodiverse wilderness areas on the continent.</p>
+              <p>Just <strong>2km from Memorial Gate, Hluhluwe-iMfolozi Park</strong> — Africa&apos;s oldest proclaimed game reserve (established 1895). Big 5 country, the last major stronghold of the southern white rhino, and one of the most biodiverse wilderness areas on the continent.</p>
             </div>
             <div className={styles.facts}>
               <h3>Quick Facts</h3>
               <ul>
-                <li><strong>Name:</strong> Ethlathini — isiZulu for "in the forest"</li>
+                <li><strong>Name:</strong> Ethlathini — isiZulu for &quot;in the forest&quot;</li>
                 <li><strong>Location:</strong> Memorial Gate Road, Hluhluwe, KZN</li>
                 <li><strong>Distance to gate:</strong> 2 km</li>
                 <li><strong>Open:</strong> 4 overland campsites (self-contained only)</li>
@@ -48,7 +48,7 @@ export default function AboutPage() {
           <div className={styles.sidebar}>
             <Image src="/images/logo_stacked.jpg" alt="Ethlathini Rest Camp" width={200} height={240} className={styles.logo} />
             {[
-              {label:"The Name", val:'"Ethlathini"', note:'In isiZulu: "in the forest"'},
+              {label:"The Name", val:'&quot;Ethlathini&quot;', note:'In isiZulu: &quot;in the forest&quot;'},
               {label:"Location", val:"Hluhluwe", note:"KwaZulu-Natal, South Africa"},
               {label:"Distance to Gate", val:"2 km", note:"Memorial Gate, Hluhluwe-iMfolozi Park"},
               {label:"Open Now", val:"4 Overland Sites", note:"Self-contained campers only"},
