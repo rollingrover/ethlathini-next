@@ -1,5 +1,6 @@
 // app/layout.jsx
 import '../styles/globals.css'
+import { lora, dmSans } from '../lib/fonts'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { SITE, localBusinessSchema } from '../lib/seo'
@@ -33,20 +34,40 @@ export const metadata = {
   manifest: '/site.webmanifest',
 }
 
+// viewport and themeColor must be exported separately in Next.js 14
+// (not inside metadata object — Next.js will warn if they are)
+export const viewport = {
+  width:          'device-width',
+  initialScale:   1,
+  themeColor:     '#1C3A18',   // forest green — matches brand + PWA chrome
+  colorScheme:    'light',
+}
+
 export default function RootLayout({ children }) {
   return (
+    // NOTE for Part D: when [locale] layout is added, move lang to the locale layout
     <html lang="en-ZA">
       <head>
-        {/* JSON-LD structured data */}
+        {/* JSON-LD structured data — LocalBusiness schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
         />
-        {/* Preconnect for Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/*
+          No manual <link> font tags needed — next/font handles preloading,
+          self-hosting, and crossOrigin automatically. External font links
+          removed to eliminate render-blocking requests and FOIT.
+        */}
       </head>
-      <body>
+      {/*
+        lora.variable    injects --font-display CSS variable
+        dmSans.variable  injects --font-body CSS variable
+        Both are available globally via var(--font-display) and var(--font-body) in CSS.
+
+        Part D — locale layouts: add the locale-specific font variable class here,
+        e.g. for /zh: className={`${lora.variable} ${dmSans.variable} ${notoSansSC.variable}`}
+      */}
+      <body className={`${lora.variable} ${dmSans.variable}`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

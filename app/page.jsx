@@ -12,49 +12,49 @@ export const metadata = pageMeta({
 
 const FEATURES = [
   { 
-    icon: "/images/icons/forrest-icon.png", 
+    icon: "/images/icons/mahogany-fig-forest-icon.png", 
     title: "Mahogany & fig forest",   
     desc: "Sleep under a real forest canopy — shade, birdsong, and total bush quiet on a KZN hillside.",
     alt: "Mahogany and fig forest icon"
   },
   { 
-    icon: "/images/icons/big5-at-doorstep.png", 
+    icon: "/images/icons/big5-game-reserve-icon-hluhluwe.png", 
     title: "Big 5 at your door",       
     desc: "2km from Memorial Gate. Lion, leopard, elephant, rhino & buffalo in Africa's oldest reserve.",
     alt: "Big 5 icon"
   },
   { 
-    icon: "/images/icons/overland-campsites.png", 
+    icon: "/images/icons/overland-campsite-icon-south-africa.png", 
     title: "Overland-ready sites",     
     desc: "Shaded natural sites for fully self-contained rooftop tents, trailers & large rigs.",
     alt: "Overland campsite icon"
   },
   { 
-    icon: "/images/icons/birding-paradise.png", 
+    icon: "/images/icons/birding-paradise-icon-hluhluwe.png", 
     title: "Birding paradise",          
     desc: "Exceptional birdlife with a huge variety of species right on the property.",
     alt: "Bird watching icon"
   },
   { 
-    icon: "/images/icons/onsite-morning-walk.png", 
+    icon: "/images/icons/morning-walk-forest-icon.png", 
     title: "Safe morning walk",         
     desc: "A peaceful ~400m boundary walk along the edge of the property — shaded forest stroll.",
     alt: "Morning walk icon"
   },
   { 
-    icon: "/images/icons/coffee-icon.png", 
+    icon: "/images/icons/coffee-shop-icon.png", 
     title: "Coffee shop & nursery",     
     desc: "Opening very soon — good coffee in the forest, and indigenous plants to take home.",
     alt: "Coffee shop and nursery icon"
   },
   { 
-    icon: "/images/icons/community-at-heart-ico.png", 
+    icon: "/images/icons/community-heart-icon.png", 
     title: "Community at heart",        
     desc: "Skills centre, food garden, fish farm & restaurant — building it one layer at a time.",
     alt: "Community icon"
   },
   { 
-    icon: "/images/icons/honest-and-growing.png", 
+    icon: "/images/icons/honest-growing-icon.png", 
     title: "Honest & growing",          
     desc: "We tell you what's ready and what isn't. Come as we are — it's already worth the stop.",
     alt: "Honest and growing icon"
@@ -91,22 +91,27 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className={styles.hero}>
         <Image
-          src="/images/social_post_forest.jpg"
-          alt="Ethlathini Rest Camp forest canopy, Hluhluwe KwaZulu-Natal"
+          src="/images/photos/tree-aloe-clean-silhouette-sunrise-ethlathini-kzn.jpg"
+          alt="Tree aloe silhouette at sunrise, Ethlathini Rest Camp, Hluhluwe KwaZulu-Natal"
           fill
           className={styles.heroBg}
           priority
+          fetchPriority="high"
+          quality={80}
           sizes="100vw"
         />
         <div className={styles.heroOverlay} />
         <div className={`wrap ${styles.heroContent}`}>
           <Image
-            src="/images/logo_stacked.jpg"
+            src="/images/ethlathini-rest-camp-logo.jpg"
             alt="Ethlathini Rest Camp logo"
             width={240}
             height={290}
             className={styles.heroLogo}
+            sizes="(max-width: 768px) 180px, 240px"
+            quality={90}
             priority
+            fetchPriority="high"
           />
           <p className={styles.heroSub}>
             From tar road to forest canopy in one turn.<br />
@@ -135,8 +140,8 @@ export default function HomePage() {
         <div className={`wrap ${styles.splitInner}`}>
           <div className={styles.splitImg}>
             <Image
-              src="/images/social_post_forest.jpg"
-              alt="Ethlathini overland campsite under forest canopy"
+              src="/images/photos/firewood-braai-ethlathini-campsite-stoep-hluhluwe.jpg"
+              alt="Firewood and braai stand at Ethlathini Rest Camp campsite, Hluhluwe KZN"
               fill
               sizes="(max-width:750px) 100vw, 50vw"
               className={styles.splitPhoto}
@@ -176,6 +181,7 @@ export default function HomePage() {
                     alt={f.alt}
                     width={48}
                     height={48}
+                    sizes="48px"
                     className={styles.featIconImg}
                   />
                 </div>

@@ -17,10 +17,12 @@ export default function Footer() {
         {/* Brand */}
         <div className={styles.brand}>
           <Image
-            src="/images/logo_stacked.jpg"
+            src="/images/ethlathini-rest-camp-logo.jpg"
             alt="Ethlathini Rest Camp"
             width={100}
             height={120}
+            sizes="100px"
+            quality={90}
             className={styles.logo}
           />
           <div>

@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <section className={styles.hero}>
-        <Image src="/images/social_post_forest.jpg" alt="Ethlathini forest canopy Hluhluwe" fill className={styles.heroBg} sizes="100vw" priority />
+        <Image src="/images/photos/ethlathini-forest-canopy-clean-mahogany-fig-kzn.jpg" alt="Looking up through the mahogany and fig forest canopy at Ethlathini Rest Camp, KZN" fill className={styles.heroBg} sizes="100vw" priority fetchPriority="high" quality={80} />
         <div className={styles.heroOverlay} />
         <div className={'wrap ' + styles.heroContent}>
           <span className="eyebrow" style={{color:"#C4874A"}}>About Ethlathini</span>
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <p className={styles.signoff}><strong>Siyakwamukela. Welcome. We are glad you are here.</strong></p>
           </div>
           <div className={styles.sidebar}>
-            <Image src="/images/logo_stacked.jpg" alt="Ethlathini Rest Camp" width={200} height={240} className={styles.logo} />
+            <Image src="/images/ethlathini-rest-camp-logo.jpg" alt="Ethlathini Rest Camp" width={200} height={240} sizes="(max-width: 800px) 160px, 200px" className={styles.logo} />
             {[
               {label:"The Name", val:"“Ethlathini”", note:'In isiZulu: “in the forest”'},
               {label:"Location", val:"Hluhluwe", note:"KwaZulu-Natal, South Africa"},

@@ -13,7 +13,7 @@ export default function DreamPage() {
   return (
     <>
       <section className={styles.hero}>
-        <Image src="/images/social_post_forest.jpg" alt="Ethlathini forest" fill className={styles.heroBg} sizes="100vw" priority />
+        <Image src="/images/photos/ethlathini-property-sunrise-misty-hillside-kzn.jpg" alt="Soft misty sunrise over the Ethlathini Rest Camp property hillside, Hluhluwe KZN — the beginning of the journey" fill className={styles.heroBg} sizes="100vw" priority fetchPriority="high" quality={80} />
         <div className={styles.heroOverlay} />
         <div className={'wrap ' + styles.heroContent}>
           <span className="eyebrow" style={{color:"#C4874A"}}>The Dream</span>
@@ -62,7 +62,7 @@ export default function DreamPage() {
             </div>
           </div>
           <div className={styles.sidebar}>
-            <Image src="/images/logo_stacked.jpg" alt="Ethlathini" width={180} height={216} className={styles.logo} />
+            <Image src="/images/ethlathini-rest-camp-logo.jpg" alt="Ethlathini" width={180} height={216} sizes="(max-width: 800px) 140px, 180px" className={styles.logo} />
             <div className={styles.card + ' ' + styles.highlight}>
               <div className={styles.cardLabel}>The Question</div>
               <div className={styles.cardVal}>“Can you build a skills center?”</div>

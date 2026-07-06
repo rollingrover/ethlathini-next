@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { pageMeta, SITE } from '../../lib/seo'
 import styles from './findus.module.css'
 
@@ -14,8 +15,19 @@ export default function FindUsPage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className="wrap">
-          <span className="eyebrow">Getting here</span>
+        <Image
+          src="/images/photos/main-road-sunrise-approach-ethlathini-hluhluwe.jpg"
+          alt="Sunrise on the main road approaching Ethlathini Rest Camp and Hluhluwe-iMfolozi Memorial Gate"
+          fill
+          className={styles.heroBg}
+          priority
+          fetchPriority="high"
+          quality={80}
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} />
+        <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
+          <span className="eyebrow" style={{ color: '#C4874A' }}>Getting here</span>
           <h1>Find us</h1>
           <p>On the main road to Memorial Gate, 2km before the entrance to Hluhluwe-iMfolozi Park.</p>
         </div>

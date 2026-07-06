@@ -24,19 +24,23 @@ export default function Navbar() {
         <Link href="/" className={styles.brand} onClick={() => setOpen(false)}>
           {/* Icon only on mobile */}
           <Image
-            src="/images/logos/logo-alt.png"
+            src="/images/logos/ethlathini-logo-icon-transparent.png"
             alt="Ethlathini"
             width={40}
             height={40}
+            sizes="40px"
+            quality={90}
             className={styles.logoIcon}
             priority
           />
           {/* Horizontal lockup on desktop */}
           <Image
-            src="/images/logo_stacked.jpg"
+            src="/images/ethlathini-rest-camp-logo.jpg"
             alt="Ethlathini Rest Camp"
             width={220}
             height={44}
+            sizes="220px"
+            quality={90}
             className={styles.logoWide}
             priority
           />

@@ -11,19 +11,19 @@ export const metadata = pageMeta({
 
 const PILLARS = [
   {
-    icon: "/images/icons/hospitality-skills-icon.png",
+    icon: "/images/icons/hospitality-skills-training-icon.png",
     title: "Hospitality Skills",
     desc: "The campsites, coffee shop, restaurant, and future chalets will train people in guest relations, housekeeping, lodge management, and food & beverage service.",
     alt: "Hospitality skills icon"
   },
   {
-    icon: "/images/icons/trade-agri-skills-icon.png",
+    icon: "/images/icons/trade-agricultural-skills-icon.png",
     title: "Trade & Agricultural Skills",
     desc: "The community garden, fish farm, nursery, and workshop will train people in sustainable food production, aquaculture, indigenous plant propagation, and carpentry, plumbing, and welding.",
     alt: "Trade and agricultural skills icon"
   },
   {
-    icon: "/images/icons/future-skills-icon.png",
+    icon: "/images/icons/future-skills-it-training-icon.png",
     title: "Future Skills",
     desc: "The conference center will train people in IT, AI fundamentals, events management, and digital literacy. It will also host weddings, functions and corporate events.",
     alt: "Future skills icon"
@@ -32,25 +32,25 @@ const PILLARS = [
 
 // ── Open Now Images ──
 const OPEN_NOW = [
-  { src: "/images/icons/overland-campsites-icon.png", label: "4 Overland Campsites", alt: "Overland campsites" },
-  { src: "/images/icons/firepits-icon.png", label: "Firepits with Free Firewood", alt: "Firepit icon" },
-  { src: "/images/icons/clean-water-icon.png", label: "Clean Water Points", alt: "Clean water points" },
-  { src: "/images/icons/wifi-icon.png", label: "WiFi in Selected Areas", alt: "WiFi icon" },
-  { src: "/images/icons/portable-braai-icon.png", label: "Shared Portable Braai", alt: "Portable braai" },
-  { src: "/images/icons/volunteer-rooms-icon.png", label: "2 Volunteer Rooms", alt: "Volunteer rooms" },
+  { src: "/images/icons/overland-campsite-booking-icon.png", label: "4 Overland Campsites", alt: "Overland campsites" },
+  { src: "/images/icons/firepit-free-firewood-icon.png", label: "Firepits with Free Firewood", alt: "Firepit icon" },
+  { src: "/images/icons/clean-water-points-icon.png", label: "Clean Water Points", alt: "Clean water points" },
+  { src: "/images/icons/wifi-campsite-icon.png", label: "WiFi in Selected Areas", alt: "WiFi icon" },
+  { src: "/images/icons/portable-braai-campsite-icon.png", label: "Shared Portable Braai", alt: "Portable braai" },
+  { src: "/images/icons/volunteer-accommodation-rooms-icon.png", label: "2 Volunteer Rooms", alt: "Volunteer rooms" },
 ]
 
 // ── Coming Soon Images ──
 const COMING_SOON = [
-  { src: "/images/icons/coming-ablutions-more-campsites-icon.png", label: "More Campsites with Ablutions", alt: "Campsites with ablutions" },
-  { src: "/images/icons/chalets-clean-icon.png", label: "Chalets", alt: "Chalets" },
-  { src: "/images/icons/coffee-shop-nursery-icon.png", label: "Coffee Shop & Indigenous Nursery", alt: "Coffee shop and nursery" },
-  { src: "/images/icons/restaurant-icon.png", label: "Restaurant", alt: "Restaurant" },
-  { src: "/images/icons/skills-development-icon.png", label: "Skills Development Center", alt: "Skills development center" },
-  { src: "/images/icons/fishfarm-icon.png", label: "Fish Farm", alt: "Fish farm" },
-  { src: "/images/icons/foodgarden-icon.png", label: "Community Food Garden", alt: "Community food garden" },
-  { src: "/images/icons/workshop-tradeskills-icon.png", label: "Workshop for Trades Training", alt: "Workshop" },
-  { src: "/images/icons/conference-center-it-skills-wedding-functions-icon.png", label: "Conference Center (Weddings, Functions, IT & AI)", alt: "Conference center" },
+  { src: "/images/icons/coming-soon-ablutions-campsites-icon.png", label: "More Campsites with Ablutions", alt: "Campsites with ablutions" },
+  { src: "/images/icons/chalets-accommodation-icon.png", label: "Chalets", alt: "Chalets" },
+  { src: "/images/icons/coffee-shop-nursery-ethlathini-icon.png", label: "Coffee Shop & Indigenous Nursery", alt: "Coffee shop and nursery" },
+  { src: "/images/icons/restaurant-coming-soon-icon.png", label: "Restaurant", alt: "Restaurant" },
+  { src: "/images/icons/skills-development-center-icon.png", label: "Skills Development Center", alt: "Skills development center" },
+  { src: "/images/icons/fish-farm-aquaculture-icon.png", label: "Fish Farm", alt: "Fish farm" },
+  { src: "/images/icons/food-garden-community-icon.png", label: "Community Food Garden", alt: "Community food garden" },
+  { src: "/images/icons/workshop-trade-skills-icon.png", label: "Workshop for Trades Training", alt: "Workshop" },
+  { src: "/images/icons/conference-center-skills-weddings-icon.png", label: "Conference Center (Weddings, Functions, IT & AI)", alt: "Conference center" },
 ]
 
 export default function VisionPage() {
@@ -58,7 +58,7 @@ export default function VisionPage() {
     <>
       {/* ── Hero ── */}
       <section className={styles.hero}>
-        <Image src="/images/social_post_forest.jpg" alt="Ethlathini forest canopy" fill className={styles.heroBg} sizes="100vw" priority />
+        <Image src="/images/photos/sunrise-misty-valleys-hluhluwe-imfolozi-landscape.jpg" alt="Misty sunrise view over the valleys near Hluhluwe-iMfolozi Park, KwaZulu-Natal — the landscape Ethlathini is part of" fill className={styles.heroBg} sizes="100vw" priority fetchPriority="high" quality={80} />
         <div className={styles.heroOverlay} />
         <div className={"wrap " + styles.heroContent}>
           <span className="eyebrow" style={{color:"#C4874A"}}>Our Vision</span>
@@ -85,10 +85,11 @@ export default function VisionPage() {
           </div>
           <div className={styles.aerialImage}>
             <Image
-              src="/images/aerial-site-planned.png"
+              src="/images/ethlathini-rest-camp-site-plan-hluhluwe-imfolozi.png"
               alt="Ethlathini proposed aerial plan showing campsites, chalets, skills center, fish farm, coffee shop, nursery, and community garden"
               width={1000}
               height={700}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.aerialImg}
               priority
             />
@@ -111,6 +112,7 @@ export default function VisionPage() {
                     alt={p.alt}
                     width={80}
                     height={80}
+                    sizes="80px"
                     className={styles.pillarIconImg}
                   />
                 </div>
@@ -141,6 +143,7 @@ export default function VisionPage() {
                         alt={item.alt}
                         width={48}
                         height={48}
+                        sizes="48px"
                         className={styles.buildingIconImg}
                       />
                     </div>
@@ -162,6 +165,7 @@ export default function VisionPage() {
                         alt={item.alt}
                         width={48}
                         height={48}
+                        sizes="48px"
                         className={styles.buildingIconImg}
                       />
                     </div>

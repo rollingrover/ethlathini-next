@@ -111,7 +111,7 @@ app/book/page.jsx
 app/find-us/page.jsx
   → MAPS_EMBED       — already has your GPS; verify embed works live
 
-public/images/og-image.jpg
+public/images/ethlathini-rest-camp-hluhluwe-forest-social-share.jpg
   → Add a 1200×630 hero photo for social sharing previews
   → Until then, social_post_forest.jpg will be used as fallback
 ```

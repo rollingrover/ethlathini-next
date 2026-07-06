@@ -1,7 +1,17 @@
 /* styles/globals.css */
 
-/* ── Google Fonts ───────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
+/*
+  Fonts are loaded via next/font/google (lib/fonts.js) — self-hosted,
+  zero external requests, zero layout shift, display:swap built in.
+  The CSS variables --font-display and --font-body are injected by
+  next/font via the .variable classes applied to <body> in layout.jsx.
+  DO NOT add @import or <link> font tags — next/font handles everything.
+
+  Script-specific fallback variables (Part D):
+    --font-cyrillic     (ru)  — injected by notoSansCyrillic.variable
+    --font-cjk          (zh)  — injected by notoSansSC.variable
+    --font-devanagari   (hi)  — injected by notoSansDevanagari.variable
+*/
 
 /* ── Brand tokens ───────────────────────────────────────────────── */
 :root {
@@ -17,8 +27,29 @@
   --sand:          #EDE0C4;
   --white:         #ffffff;
 
-  --font-display: 'Lora', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  /*
+    Font variables — set by next/font via .variable classes on <body>.
+    The var(--font-display) / var(--font-body) are injected automatically.
+    Fallbacks here are safety nets only — next/font should always load.
+
+    Script-specific fonts (Part D — only present on matching locale pages):
+      --font-cyrillic     → Noto Sans (Cyrillic) for /ru
+      --font-cjk          → Noto Sans SC for /zh
+      --font-devanagari   → Noto Sans Devanagari for /hi
+  */
+  --font-display:     var(--font-lora, 'Lora'), Georgia, serif;
+  --font-body:        var(--font-dm-sans, 'DM Sans'), system-ui, sans-serif;
+
+  /* CJK fallback chain — active only when --font-cjk is defined (/zh) */
+  --font-display-zh:  var(--font-cjk, 'Noto Sans SC'), var(--font-lora, 'Lora'), sans-serif;
+  --font-body-zh:     var(--font-cjk, 'Noto Sans SC'), var(--font-dm-sans, 'DM Sans'), sans-serif;
+
+  /* Devanagari fallback chain — active only when --font-devanagari is defined (/hi) */
+  --font-display-hi:  var(--font-devanagari, 'Noto Sans Devanagari'), var(--font-lora, 'Lora'), sans-serif;
+  --font-body-hi:     var(--font-devanagari, 'Noto Sans Devanagari'), var(--font-dm-sans, 'DM Sans'), sans-serif;
+
+  /* Cyrillic — Noto Sans covers Cyrillic; Lora also has partial Cyrillic but Noto is complete */
+  --font-body-ru:     var(--font-cyrillic, 'Noto Sans'), var(--font-dm-sans, 'DM Sans'), sans-serif;
 
   --max-w:     1100px;
   --px:        clamp(1rem, 5vw, 2.5rem);
@@ -39,6 +70,24 @@ body {
   color: var(--forest);
   background: #fff;
   -webkit-font-smoothing: antialiased;
+}
+
+/*
+  Script-specific body font overrides (Part D — locale layouts).
+  When next/font injects --font-cjk / --font-devanagari / --font-cyrillic
+  via the .variable class on <body>, these rules activate automatically.
+  No JS or conditional logic needed — CSS variable fallback chain handles it.
+*/
+:lang(zh), :lang(zh-Hans) {
+  font-family: var(--font-body-zh);
+}
+:lang(hi) {
+  font-family: var(--font-body-hi);
+  /* Devanagari needs slightly larger line-height for descenders */
+  line-height: 1.8;
+}
+:lang(ru) {
+  font-family: var(--font-body-ru);
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }

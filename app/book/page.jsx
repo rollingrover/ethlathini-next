@@ -8,7 +8,7 @@ import styles from './book.module.css'
 const SITE_TYPES = [
   {
     id: 'overland', 
-    icon: "/images/icons/overland-campsites-icon.png",
+    icon: "/images/icons/overland-campsite-booking-icon.png",
     name: 'Overland / Rooftop',
     desc: 'Cleared site for rooftop tents, trailers & overland rigs. Shaded bush clearing.',
     price: 'R200', 
@@ -18,7 +18,7 @@ const SITE_TYPES = [
   },
   {
     id: 'group', 
-    icon: "/images/icons/community-at-heart-ico.png",
+    icon: "/images/icons/community-heart-icon.png",
     name: 'Group Site',
     desc: 'For convoys, 4x4 clubs & group travel. Up to 3 vehicles.',
     price: 'R450', 
@@ -29,13 +29,13 @@ const SITE_TYPES = [
 ]
 
 const INCLUSIONS = [
-  { icon:"/images/icons/clean-water-icon.png", label:'Power points in main house for charging', alt: 'Power points' },
-  { icon:"/images/icons/firepits-icon.png", label:'Firepit & free firewood from the forest', alt: 'Firepit' },
-  { icon:"/images/icons/wifi-icon.png", label:'WiFi in selected areas', alt: 'WiFi' },
-  { icon:"/images/icons/forrest-icon.png", label:'Dark skies, zero light pollution', alt: 'Dark skies' },
-  { icon:"/images/icons/forrest-icon.png", label:'Mahogany, fig & tree aloe forest', alt: 'Forest' },
-  { icon:"/images/icons/clean-water-icon.png", label:'Refuse removal', alt: 'Refuse removal' },
-  { icon:"/images/icons/big5-at-doorstep.png", label:'2km from Memorial Gate', alt: 'Location' },
+  { icon:"/images/icons/clean-water-points-icon.png", label:'Power points in main house for charging', alt: 'Power points' },
+  { icon:"/images/icons/firepit-free-firewood-icon.png", label:'Firepit & free firewood from the forest', alt: 'Firepit' },
+  { icon:"/images/icons/wifi-campsite-icon.png", label:'WiFi in selected areas', alt: 'WiFi' },
+  { icon:"/images/icons/mahogany-fig-forest-icon.png", label:'Dark skies, zero light pollution', alt: 'Dark skies' },
+  { icon:"/images/icons/mahogany-fig-forest-icon.png", label:'Mahogany, fig & tree aloe forest', alt: 'Forest' },
+  { icon:"/images/icons/clean-water-points-icon.png", label:'Refuse removal', alt: 'Refuse removal' },
+  { icon:"/images/icons/big5-game-reserve-icon-hluhluwe.png", label:'2km from Memorial Gate', alt: 'Location' },
 ]
 
 const FAQS = [
@@ -89,8 +89,19 @@ export default function BookPage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className="wrap">
-          <span className="eyebrow">Overland Campsites · Self-Contained Only</span>
+        <Image
+          src="/images/photos/firewood-braai-ethlathini-campsite-stoep-hluhluwe.jpg"
+          alt="Firewood and braai stand at Ethlathini Rest Camp campsite stoep, Hluhluwe KZN"
+          fill
+          className={styles.heroBg}
+          priority
+          fetchPriority="high"
+          quality={80}
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} />
+        <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
+          <span className="eyebrow" style={{ color: '#C4874A' }}>Overland Campsites · Self-Contained Only</span>
           <h1>Book your site in the forest</h1>
           <p>4 cleared sites under mahogany, fig & tree aloe canopy, 2km from Memorial Gate. Firepits. Pure bush quiet.</p>
         </div>
@@ -117,6 +128,7 @@ export default function BookPage() {
                     alt={s.alt}
                     width={56}
                     height={56}
+                    sizes="56px"
                     className={styles.rateIconImg}
                   />
                 </div>
@@ -159,6 +171,7 @@ export default function BookPage() {
                     alt={i.alt}
                     width={32}
                     height={32}
+                    sizes="32px"
                     className={styles.inclIconImg}
                   />
                 </div>
@@ -255,6 +268,7 @@ export default function BookPage() {
                             alt={s.alt}
                             width={32}
                             height={32}
+                            sizes="32px"
                             className={styles.siteOptIconImg}
                           />
                         </div>
