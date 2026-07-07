@@ -696,3 +696,7 @@
   color: #C4874A;
   font-weight: 500;
 }
+
+/* ── RatesTable (server-rendered static section) ── */
+.rates-table-section { padding: var(--py) 0; background: var(--cream-bg); }
+

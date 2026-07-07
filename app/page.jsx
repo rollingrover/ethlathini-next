@@ -1,14 +1,32 @@
 // app/page.jsx
 import Image from 'next/image'
 import Link from 'next/link'
-import { pageMeta, breadcrumbSchema, SITE } from '../lib/seo'
+import { breadcrumbSchema, SITE } from '../lib/seo'
 import styles from './page.module.css'
 
-export const metadata = pageMeta({
-  path: '/',
-  title: 'Overland Campsites in the Forest — Hluhluwe, KZN',
-  description: 'Ethlathini Rest Camp — overland campsites in a mahogany and fig forest, 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Big 5 country. KwaZulu-Natal.',
-})
+// Home page uses the root layout default title:
+// "Ethlathini Rest Camp — Overland Campsites in the Forest, Hluhluwe KZN"
+// Do NOT export a title here — if title is present (even undefined), Next.js
+// may apply the template producing a blank/broken result.
+export const metadata = {
+  description: 'Ethlathini Rest Camp — overland campsites in a mahogany and fig forest, 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Big 5 country. KwaZulu-Natal, South Africa.',
+  alternates: { canonical: SITE.domain },
+  openGraph: {
+    type:        'website',
+    url:         SITE.domain,
+    title:       `Ethlathini Rest Camp — Overland Campsites in the Forest, Hluhluwe KZN`,
+    description: 'Ethlathini Rest Camp — overland campsites in a mahogany and fig forest, 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Big 5 country. KwaZulu-Natal, South Africa.',
+    siteName:    SITE.name,
+    locale:      'en_ZA',
+    images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: SITE.name }],
+  },
+  twitter: {
+    card:        'summary_large_image',
+    title:       `Ethlathini Rest Camp — Overland Campsites in the Forest, Hluhluwe KZN`,
+    description: 'Ethlathini Rest Camp — overland campsites in a mahogany and fig forest, 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Big 5 country. KwaZulu-Natal, South Africa.',
+    images:      [SITE.ogImage],
+  },
+}
 
 const FEATURES = [
   { 

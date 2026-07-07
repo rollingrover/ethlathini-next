@@ -4,7 +4,7 @@ import styles from './about.module.css'
 
 export const metadata = pageMeta({
   path: '/about',
-  title: 'About — Forest campsite in Hluhluwe, KZN',
+  title: 'About — Forest Campsite in Hluhluwe, KZN',
   description: 'Ethlathini Rest Camp is a mahogany and fig forest campsite 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Our story, our community, our honest journey.',
 })
 

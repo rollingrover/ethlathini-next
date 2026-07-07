@@ -8,8 +8,8 @@ import { SITE, localBusinessSchema } from '../lib/seo'
 export const metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default:  `${SITE.name} — ${SITE.tagline}`,
-    template: `%s | ${SITE.name}`,
+    default:  'Ethlathini Rest Camp — Overland Campsites in the Forest, Hluhluwe KZN',
+    template: '%s | Ethlathini Rest Camp',
   },
   description: SITE.description,
   keywords: [

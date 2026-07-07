@@ -4,7 +4,7 @@ import styles from './findus.module.css'
 
 export const metadata = pageMeta({
   path: '/find-us',
-  title: 'Find Us — Directions to Ethlathini Rest Camp, Hluhluwe',
+  title: 'Find Us — Directions & Map, Hluhluwe KZN',
   description: 'Find Ethlathini Rest Camp on the main road to Memorial Gate, Hluhluwe-iMfolozi Park. GPS: -28.056694, 32.154616. 2km from the gate.',
 })
 

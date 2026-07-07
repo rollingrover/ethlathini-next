@@ -6,11 +6,22 @@
 
 ## 🔴 MUST DO (site broken or misleading without these)
 
-### 1. Fill in real campsite rates
-- **File:** `app/book/page.jsx`
-- **Search for:** `R___`
-- Rate placeholders: site nightly rate, extra adult, extra child, extra vehicle
-- Currently: `calculateTotal()` function uses hardcoded test values (R200/R450) — update to real rates
+### 1. Fill in real campsite rates — RATES TABLE IS LIVE AND INDEXED
+- **File:** `app/book/RatesTable.jsx` — edit the `RATES` object at the top of the file
+- **Search for:** `R___` (7 occurrences)
+- The rates table is **server-rendered static HTML** — Google indexes it immediately
+- Currently shows `R___` placeholders which will appear in search snippets
+- **Update these values in `RATES` config block:**
+  ```js
+  overland:     'R___',   // ← overland/rooftop tent site (2 people)
+  group:        'R___',   // ← group site (up to 8 people, 3 vehicles)
+  volunteer:    'R___',   // ← volunteer room in main house
+  extraAdult:   'R___',   // ← per adult beyond 2 included
+  childUnder12: 'R___',   // ← per child under 12
+  extraVehicle: 'R___',   // ← per additional vehicle
+  ratesDate:    '2026',   // ← update year if needed
+  ```
+- Also update matching display prices in `BookingWidget.jsx` → `SITE_TYPES[].price`
 
 ### 2. Create OG social share image
 - **File needed:** `public/images/ethlathini-rest-camp-hluhluwe-forest-social-share.jpg`
