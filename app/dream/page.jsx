@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { pageMeta, SITE } from '../../lib/seo'
+import { pageMeta, breadcrumbSchema, SITE } from '../../lib/seo'
+import { StructuredData } from '../../components/StructuredData'
 import styles from './dream.module.css'
 
 export const metadata = pageMeta({
@@ -12,6 +13,10 @@ export const metadata = pageMeta({
 export default function DreamPage() {
   return (
     <>
+      <StructuredData data={breadcrumbSchema([
+        { name: 'Home',      path: '/' },
+        { name: 'The Dream', path: '/dream' },
+      ])} />
       <section className={styles.hero}>
         <Image src="/images/photos/ethlathini-property-sunrise-misty-hillside-kzn.jpg" alt="Soft misty sunrise over the Ethlathini Rest Camp property hillside, Hluhluwe KZN — the beginning of the journey" fill className={styles.heroBg} sizes="100vw" priority fetchPriority="high" quality={80} />
         <div className={styles.heroOverlay} />

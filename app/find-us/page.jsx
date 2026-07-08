@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { pageMeta, SITE } from '../../lib/seo'
+import { pageMeta, breadcrumbSchema, SITE } from '../../lib/seo'
+import { StructuredData } from '../../components/StructuredData'
 import styles from './findus.module.css'
 
 export const metadata = pageMeta({
@@ -14,6 +15,12 @@ const MAPS_DIR  = "https://www.google.com/maps/dir/?api=1&destination=28.056694,
 export default function FindUsPage() {
   return (
     <>
+      <StructuredData data={
+        breadcrumbSchema([
+          { name: 'Home',    path: '/' },
+          { name: 'Find Us', path: '/find-us' },
+        ])
+      } />
       <section className={styles.hero}>
         <Image
           src="/images/photos/main-road-sunrise-approach-ethlathini-hluhluwe.jpg"

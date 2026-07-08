@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { breadcrumbSchema, SITE } from '../lib/seo'
+import { StructuredData } from '../components/StructuredData'
 import styles from './page.module.css'
 
 // Home page uses the root layout default title:
@@ -101,10 +102,9 @@ const COMING = [
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: 'Home', path: '/' }])) }}
-      />
+      <StructuredData data={
+        breadcrumbSchema([{ name: 'Home', path: '/' }])
+      } />
 
       {/* ── Hero ── */}
       <section className={styles.hero}>

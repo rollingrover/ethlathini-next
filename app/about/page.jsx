@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { pageMeta } from '../../lib/seo'
+import { pageMeta, organizationSchema, breadcrumbSchema } from '../../lib/seo'
+import { StructuredData } from '../../components/StructuredData'
 import styles from './about.module.css'
 
 export const metadata = pageMeta({
@@ -11,6 +12,13 @@ export const metadata = pageMeta({
 export default function AboutPage() {
   return (
     <>
+      <StructuredData data={[
+        organizationSchema(),
+        breadcrumbSchema([
+          { name: 'Home',  path: '/' },
+          { name: 'About', path: '/about' },
+        ]),
+      ]} />
       <section className={styles.hero}>
         <Image src="/images/photos/ethlathini-forest-canopy-clean-mahogany-fig-kzn.jpg" alt="Looking up through the mahogany and fig forest canopy at Ethlathini Rest Camp, KZN" fill className={styles.heroBg} sizes="100vw" priority fetchPriority="high" quality={80} />
         <div className={styles.heroOverlay} />

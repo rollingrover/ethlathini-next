@@ -11,6 +11,8 @@
 //           → LCP resolves without JS hydration
 
 import Image from 'next/image'
+import { breadcrumbSchema, campingOfferSchema } from '../../lib/seo'
+import { StructuredData } from '../../components/StructuredData'
 import RatesTable from './RatesTable'
 import BookingWidget from './BookingWidget'
 import styles from './book.module.css'
@@ -18,6 +20,14 @@ import styles from './book.module.css'
 export default function BookPage() {
   return (
     <>
+      <StructuredData data={[
+        campingOfferSchema(),
+        breadcrumbSchema([
+          { name: 'Home',          path: '/' },
+          { name: 'Book & Rates',  path: '/book' },
+        ]),
+      ]} />
+
       {/* ── Hero — server-rendered, priority LCP ── */}
       <section className={styles.hero}>
         <Image

@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { lora, dmSans } from '../lib/fonts'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { StructuredData } from '../components/StructuredData'
 import { SITE, localBusinessSchema } from '../lib/seo'
 
 export const metadata = {
@@ -48,11 +49,12 @@ export default function RootLayout({ children }) {
     // NOTE for Part D: when [locale] layout is added, move lang to the locale layout
     <html lang="en-ZA">
       <head>
-        {/* JSON-LD structured data — LocalBusiness schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema()) }}
-        />
+        {/*
+          LocalBusiness + CampingGround schema on every page.
+          Pages that need additional schemas (home, about, book, find-us)
+          render extra <StructuredData> components inline in their JSX.
+        */}
+        <StructuredData data={localBusinessSchema()} />
         {/*
           No manual <link> font tags needed — next/font handles preloading,
           self-hosting, and crossOrigin automatically. External font links

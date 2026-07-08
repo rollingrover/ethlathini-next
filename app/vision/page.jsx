@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { pageMeta } from '../../lib/seo'
+import { pageMeta, breadcrumbSchema } from '../../lib/seo'
+import { StructuredData } from '../../components/StructuredData'
 import styles from './vision.module.css'
 
 export const metadata = pageMeta({
@@ -56,6 +57,10 @@ const COMING_SOON = [
 export default function VisionPage() {
   return (
     <>
+      <StructuredData data={breadcrumbSchema([
+        { name: 'Home',       path: '/' },
+        { name: 'Our Vision', path: '/vision' },
+      ])} />
       {/* ── Hero ── */}
       <section className={styles.hero}>
         <Image src="/images/photos/sunrise-misty-valleys-hluhluwe-imfolozi-landscape.jpg" alt="Misty sunrise view over the valleys near Hluhluwe-iMfolozi Park, KwaZulu-Natal — the landscape Ethlathini is part of" fill className={styles.heroBg} sizes="100vw" priority fetchPriority="high" quality={80} />
