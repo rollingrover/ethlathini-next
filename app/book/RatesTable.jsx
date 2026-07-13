@@ -13,7 +13,7 @@ const RATES = {
   // ── Nightly site rates ────────────────────────────────────────
   overland:       'R200',   // overland/rooftop tent site (up to 2 people)
   group:          'R450',   // group site (up to 3 vehicles / 8 people)
-  volunteer:      'enquire',   // volunteer room in main house
+  volunteer:      'packages available',   // volunteer room in main house
 
   // ── Additional per-person charges ────────────────────────────
   extraAdult:     'R50',   // per adult beyond base 2 included
