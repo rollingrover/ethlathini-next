@@ -7,6 +7,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { SITE } from '../../lib/seo'
+import { sendBookingEmail } from '../actions/booking'
 import styles from './book.module.css'
 
 const SITE_TYPES = [
@@ -33,13 +34,13 @@ const SITE_TYPES = [
 ]
 
 const INCLUSIONS = [
-  { icon: '/images/icons/clean-water-points-icon.png',         label: 'Power points in main house for charging',  alt: 'Power points icon' },
+  { icon: '/images/icons/power-point-icon.png',                label: 'Power points in main house for charging',  alt: 'Power points icon' },
   { icon: '/images/icons/firepit-free-firewood-icon.png',      label: 'Firepit & free firewood from the forest',  alt: 'Firepit and firewood icon' },
   { icon: '/images/icons/wifi-campsite-icon.png',              label: 'WiFi in selected areas',                   alt: 'WiFi campsite icon' },
   { icon: '/images/icons/mahogany-fig-forest-icon.png',        label: 'Dark skies, zero light pollution',         alt: 'Dark sky icon' },
   { icon: '/images/icons/mahogany-fig-forest-icon.png',        label: 'Mahogany, fig & tree aloe forest',         alt: 'Forest canopy icon' },
-  { icon: '/images/icons/clean-water-points-icon.png',         label: 'Refuse removal',                           alt: 'Refuse removal icon' },
-  { icon: '/images/icons/big5-game-reserve-icon-hluhluwe.png', label: '2km from Memorial Gate',                   alt: 'Location pin icon' },
+  { icon: '/images/icons/refuse-removal-icon.png',             label: 'Refuse removal',                           alt: 'Refuse removal icon' },
+  { icon: '/images/icons/2km-to-memorial-gate-icon.png',       label: '2km from Memorial Gate',                   alt: 'Location pin icon' },
 ]
 
 const FAQS = [
@@ -58,7 +59,8 @@ export default function BookingWidget() {
     arrive: '', depart: '', adults: '2', children: '0',
     vehicle: '', notes: '', newsletter: false,
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
+  const [statusMessage, setStatusMessage] = useState('')
   const [openFaq, setOpenFaq] = useState(null)
 
   const nights = (() => {
@@ -71,6 +73,82 @@ export default function BookingWidget() {
     ...f,
     [k]: e.target.type === 'checkbox' ? e.target.checked : e.target.value,
   }))
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+    setStatusMessage('')
+
+    const formData = new FormData()
+    formData.append('name', form.name)
+    formData.append('surname', form.surname)
+    formData.append('email', form.email)
+    formData.append('phone', form.phone)
+    formData.append('arrive', form.arrive)
+    formData.append('depart', form.depart)
+    formData.append('adults', form.adults)
+    formData.append('children', form.children)
+    formData.append('vehicle', form.vehicle)
+    formData.append('notes', form.notes)
+    formData.append('siteType', site === 'overland' ? 'Overland / Rooftop' : 'Group Site')
+
+    const result = await sendBookingEmail(formData)
+
+    if (result.success) {
+      setStatus('success')
+      setStatusMessage('Booking request sent successfully! We\'ll be in touch within 4 hours.')
+    } else {
+      setStatus('error')
+      setStatusMessage(result.message || 'Something went wrong. Please try again.')
+    }
+  }
+
+  // If successfully submitted, show success message
+  if (status === 'success') {
+    return (
+      <>
+        <section className={styles.formSection}>
+          <div className="wrap">
+            <div className={styles.formCard}>
+              <div className={styles.success}>
+                <div style={{ fontSize: 40 }}>🌿</div>
+                <h3>Booking request received!</h3>
+                <p>We&apos;ll be in touch within 4 hours to confirm your site and send the deposit invoice.</p>
+                <button 
+                  onClick={() => {
+                    setStatus('idle')
+                    setForm({
+                      name: '', surname: '', email: '', phone: '',
+                      arrive: '', depart: '', adults: '2', children: '0',
+                      vehicle: '', notes: '', newsletter: false,
+                    })
+                  }} 
+                  className="btn-secondary" 
+                  style={{ marginTop: '0.5rem' }}
+                >
+                  Send another request
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ still shows below */}
+        <section className={styles.faq}>
+          <div className="wrap">
+            <span className="eyebrow">Common questions</span>
+            <h2 className={styles.faqH2}>FAQs</h2>
+            {FAQS.map((f, i) => (
+              <div key={i} className={styles.faqItem} onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                <div className={styles.faqQ}><span>{f.q}</span><span>{openFaq === i ? '−' : '+'}</span></div>
+                {openFaq === i && <div className={styles.faqA}>{f.a}</div>}
+              </div>
+            ))}
+          </div>
+        </section>
+      </>
+    )
+  }
 
   return (
     <>
@@ -160,86 +238,84 @@ export default function BookingWidget() {
               <h2>Request a booking</h2>
               <p>We confirm availability and send your deposit invoice within 4 hours (07:00–20:00)</p>
             </div>
-            {submitted ? (
-              <div className={styles.success}>
-                <div style={{ fontSize: 40 }}>🌿</div>
-                <h3>Booking request received!</h3>
-                <p>We&apos;ll be in touch within 4 hours to confirm your site and send the deposit invoice.</p>
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.formGrid}>
+                <div className={styles.field}><label>First name *</label><input required value={form.name} onChange={set('name')} placeholder="Your first name" disabled={status === 'sending'} /></div>
+                <div className={styles.field}><label>Surname *</label><input required value={form.surname} onChange={set('surname')} placeholder="Your surname" disabled={status === 'sending'} /></div>
+                <div className={styles.field}><label>Email *</label><input required type="email" value={form.email} onChange={set('email')} placeholder="you@email.com" disabled={status === 'sending'} /></div>
+                <div className={styles.field}><label>WhatsApp / phone *</label><input required value={form.phone} onChange={set('phone')} placeholder="0XX XXX XXXX" disabled={status === 'sending'} /></div>
+                <div className={styles.field}><label>Arrival date *</label><input required type="date" value={form.arrive} onChange={set('arrive')} disabled={status === 'sending'} /></div>
+                <div className={styles.field}><label>Departure date *</label><input required type="date" value={form.depart} onChange={set('depart')} disabled={status === 'sending'} /></div>
+                <div className={styles.field}><label>Adults *</label>
+                  <select value={form.adults} onChange={set('adults')} disabled={status === 'sending'}>
+                    {[1,2,3,4,5,6,7,8].map(n => <option key={n}>{n}</option>)}
+                  </select>
+                </div>
+                <div className={styles.field}><label>Children under 12</label>
+                  <select value={form.children} onChange={set('children')} disabled={status === 'sending'}>
+                    {[0,1,2,3,4].map(n => <option key={n}>{n}</option>)}
+                  </select>
+                </div>
               </div>
-            ) : (
-              <form className={styles.form} onSubmit={e => { e.preventDefault(); setSubmitted(true) }}>
-                <div className={styles.formGrid}>
-                  <div className={styles.field}><label>First name *</label><input required value={form.name} onChange={set('name')} placeholder="Your first name" /></div>
-                  <div className={styles.field}><label>Surname *</label><input required value={form.surname} onChange={set('surname')} placeholder="Your surname" /></div>
-                  <div className={styles.field}><label>Email *</label><input required type="email" value={form.email} onChange={set('email')} placeholder="you@email.com" /></div>
-                  <div className={styles.field}><label>WhatsApp / phone *</label><input required value={form.phone} onChange={set('phone')} placeholder="0XX XXX XXXX" /></div>
-                  <div className={styles.field}><label>Arrival date *</label><input required type="date" value={form.arrive} onChange={set('arrive')} /></div>
-                  <div className={styles.field}><label>Departure date *</label><input required type="date" value={form.depart} onChange={set('depart')} /></div>
-                  <div className={styles.field}><label>Adults *</label>
-                    <select value={form.adults} onChange={set('adults')}>
-                      {[1,2,3,4,5,6,7,8].map(n => <option key={n}>{n}</option>)}
-                    </select>
-                  </div>
-                  <div className={styles.field}><label>Children under 12</label>
-                    <select value={form.children} onChange={set('children')}>
-                      {[0,1,2,3,4].map(n => <option key={n}>{n}</option>)}
-                    </select>
-                  </div>
-                </div>
 
-                <div className={styles.field} style={{ marginBottom: '1rem' }}>
-                  <label>Site type *</label>
-                  <div className={styles.siteGrid}>
-                    {SITE_TYPES.map(s => (
-                      <div
-                        key={s.id}
-                        onClick={() => setSite(s.id)}
-                        className={`${styles.siteOpt} ${site === s.id ? styles.siteSelected : ''}`}
-                        role="button" tabIndex={0}
-                        onKeyDown={e => e.key === 'Enter' && setSite(s.id)}
-                      >
-                        <div className={styles.siteOptIcon}>
-                          <Image src={s.icon} alt={s.alt} width={32} height={32} sizes="32px" className={styles.siteOptIconImg} />
-                        </div>
-                        <div className={styles.siteOptName}>{s.name}</div>
-                        <div className={styles.sitePrice}>{s.price}</div>
+              <div className={styles.field} style={{ marginBottom: '1rem' }}>
+                <label>Site type *</label>
+                <div className={styles.siteGrid}>
+                  {SITE_TYPES.map(s => (
+                    <div
+                      key={s.id}
+                      onClick={() => setSite(s.id)}
+                      className={`${styles.siteOpt} ${site === s.id ? styles.siteSelected : ''}`}
+                      role="button" tabIndex={0}
+                      onKeyDown={e => e.key === 'Enter' && setSite(s.id)}
+                    >
+                      <div className={styles.siteOptIcon}>
+                        <Image src={s.icon} alt={s.alt} width={32} height={32} sizes="32px" className={styles.siteOptIconImg} />
                       </div>
-                    ))}
+                      <div className={styles.siteOptName}>{s.name}</div>
+                      <div className={styles.sitePrice}>{s.price}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.field} style={{ marginBottom: '1rem' }}>
+                <label>Vehicle details</label>
+                <input value={form.vehicle} onChange={set('vehicle')} placeholder="e.g. Toyota Land Cruiser, rooftop tent + fridge trailer" disabled={status === 'sending'} />
+              </div>
+              <div className={styles.field} style={{ marginBottom: '1rem' }}>
+                <label>Anything else we should know?</label>
+                <textarea rows={3} value={form.notes} onChange={set('notes')} placeholder="Special requests, pets, late arrival..." disabled={status === 'sending'} />
+              </div>
+
+              {nights > 0 && (
+                <div className={styles.total}>
+                  <div>
+                    <div className={styles.totalLabel}>Estimated stay</div>
+                    <div className={styles.totalNights}>{nights} night{nights !== 1 ? 's' : ''}</div>
+                  </div>
+                  <div className={styles.totalAmount}>
+                    <div className={styles.totalLabel}>Deposit on confirmation</div>
+                    <div className={styles.totalDeposit}>50% of total</div>
                   </div>
                 </div>
+              )}
 
-                <div className={styles.field} style={{ marginBottom: '1rem' }}>
-                  <label>Vehicle details</label>
-                  <input value={form.vehicle} onChange={set('vehicle')} placeholder="e.g. Toyota Land Cruiser, rooftop tent + fridge trailer" />
+              {status === 'error' && (
+                <div style={{ color: '#d32f2f', fontSize: '14px', marginBottom: '0.75rem', textAlign: 'center' }}>
+                  {statusMessage}
                 </div>
-                <div className={styles.field} style={{ marginBottom: '1rem' }}>
-                  <label>Anything else we should know?</label>
-                  <textarea rows={3} value={form.notes} onChange={set('notes')} placeholder="Special requests, pets, late arrival..." />
-                </div>
+              )}
 
-                {nights > 0 && (
-                  <div className={styles.total}>
-                    <div>
-                      <div className={styles.totalLabel}>Estimated stay</div>
-                      <div className={styles.totalNights}>{nights} night{nights !== 1 ? 's' : ''}</div>
-                    </div>
-                    <div className={styles.totalAmount}>
-                      <div className={styles.totalLabel}>Deposit on confirmation</div>
-                      <div className={styles.totalDeposit}>50% of total</div>
-                    </div>
-                  </div>
-                )}
-
-                <label className={styles.check}>
-                  <input type="checkbox" checked={form.newsletter} onChange={set('newsletter')} />
-                  Notify me when chalets, coffee shop &amp; restaurant open
-                </label>
-                <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.9rem', fontSize: '15px', marginTop: '0.5rem' }}>
-                  Send booking request →
-                </button>
-                <p className={styles.formNote}>We reply within 4 hours (07:00–20:00). By submitting you agree to our cancellation policy.</p>
-              </form>
-            )}
+              <label className={styles.check}>
+                <input type="checkbox" checked={form.newsletter} onChange={set('newsletter')} disabled={status === 'sending'} />
+                Notify me when chalets, coffee shop &amp; restaurant open
+              </label>
+              <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.9rem', fontSize: '15px', marginTop: '0.5rem' }} disabled={status === 'sending'}>
+                {status === 'sending' ? 'Sending...' : 'Send booking request →'}
+              </button>
+              <p className={styles.formNote}>We reply within 4 hours (07:00–20:00). By submitting you agree to our cancellation policy.</p>
+            </form>
           </div>
 
           <div className={styles.wa}>

@@ -1,32 +1,53 @@
 'use client'
 // app/contact/ContactForm.jsx
 import { useState } from 'react'
+import { sendContactEmail } from '../actions/contact'
 import styles from './contact.module.css'
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
+  const [statusMessage, setStatusMessage] = useState('')
 
   const set = k => e => setForm(f => ({ ...f, [k]: e.target.value }))
 
-  // TODO: connect to email service (Formspree, EmailJS, or Resend)
-  // Example with Formspree:
-  //   const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-  //     method: 'POST', headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify(form),
-  //   })
-  //   if (res.ok) setSubmitted(true)
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setStatus('sending')
+    setStatusMessage('')
+
+    // Create FormData from the form
+    const formData = new FormData()
+    formData.append('name', form.name)
+    formData.append('email', form.email)
+    formData.append('subject', form.subject)
+    formData.append('message', form.message)
+
+    const result = await sendContactEmail(formData)
+
+    if (result.success) {
+      setStatus('success')
+      setStatusMessage('Message sent successfully! We\'ll get back to you within 24 hours.')
+      setForm({ name: '', email: '', subject: '', message: '' }) // Clear form
+    } else {
+      setStatus('error')
+      setStatusMessage(result.message || 'Something went wrong. Please try again.')
+    }
   }
 
-  if (submitted) {
+  if (status === 'success') {
     return (
       <div className={styles.formSuccess}>
         <div style={{ fontSize: 36 }}>🌿</div>
         <h3>Message received!</h3>
         <p>We&apos;ll be in touch within 24 hours. For urgent enquiries, WhatsApp us directly.</p>
+        <button 
+          onClick={() => setStatus('idle')} 
+          className="btn-secondary" 
+          style={{ marginTop: '0.5rem' }}
+        >
+          Send another message
+        </button>
       </div>
     )
   }
@@ -42,6 +63,7 @@ export default function ContactForm() {
             value={form.name}
             onChange={set('name')}
             placeholder="Your name"
+            disabled={status === 'sending'}
           />
         </div>
         <div className={styles.field}>
@@ -53,6 +75,7 @@ export default function ContactForm() {
             value={form.email}
             onChange={set('email')}
             placeholder="you@email.com"
+            disabled={status === 'sending'}
           />
         </div>
       </div>
@@ -63,6 +86,7 @@ export default function ContactForm() {
           value={form.subject}
           onChange={set('subject')}
           placeholder="e.g. Booking enquiry, volunteer, general question"
+          disabled={status === 'sending'}
         />
       </div>
       <div className={styles.field} style={{ marginBottom: '1rem' }}>
@@ -74,10 +98,23 @@ export default function ContactForm() {
           value={form.message}
           onChange={set('message')}
           placeholder="Tell us what you need..."
+          disabled={status === 'sending'}
         />
       </div>
-      <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-        Send message →
+
+      {status === 'error' && (
+        <div style={{ color: '#d32f2f', fontSize: '14px', marginBottom: '0.75rem', textAlign: 'center' }}>
+          {statusMessage}
+        </div>
+      )}
+
+      <button 
+        type="submit" 
+        className="btn-primary" 
+        style={{ width: '100%', justifyContent: 'center' }}
+        disabled={status === 'sending'}
+      >
+        {status === 'sending' ? 'Sending...' : 'Send message →'}
       </button>
       <p className={styles.formNote}>
         We reply within 24 hours · For faster response WhatsApp us directly
