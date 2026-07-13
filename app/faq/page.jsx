@@ -1,5 +1,6 @@
 // app/faq/page.jsx
 import Link from 'next/link'
+import Image from 'next/image'
 import { pageMeta, breadcrumbSchema, faqSchema, SITE } from '../../lib/seo'
 import { StructuredData } from '../../components/StructuredData'
 import styles from './faq.module.css'
@@ -61,6 +62,16 @@ const FAQS = [
   },
 ]
 
+// ── Quick Links with Icons ──
+const QUICK_LINKS = [
+  { label: 'Self-contained?', icon: '/images/icons/volunteer/custom-packages-icon.png' },
+  { label: 'Distance to gate', icon: '/images/icons/volunteer/2km-to-memorial-gate-icon.png' },
+  { label: 'Facilities', icon: '/images/icons/volunteer/building-infrastructure-icon.png' },
+  { label: 'Braai & fire', icon: '/images/icons/volunteer/clearing-invasive-species-icon.png' },
+  { label: 'How to book', icon: '/images/icons/volunteer/phone-whatsapp-icon.png' },
+  { label: 'What is Ethlathini?', icon: '/images/icons/volunteer/forest-icon.png' },
+]
+
 export default function FAQPage() {
   return (
     <>
@@ -74,7 +85,16 @@ export default function FAQPage() {
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
-        <div className="wrap">
+        <Image
+          src="/images/photos/faq-hero.jpg"
+          alt="Frequently asked questions about camping at Ethlathini Rest Camp"
+          fill
+          className={styles.heroBg}
+          priority
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} />
+        <div className={`wrap ${styles.heroContent}`}>
           <span className="eyebrow">Frequently Asked Questions</span>
           <h1>FAQ — Camping at Ethlathini</h1>
           <p>Everything you need to know before you visit. Can&apos;t find your answer? <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp us directly.</a></p>
@@ -86,8 +106,17 @@ export default function FAQPage() {
         <div className="wrap">
           <span className={styles.quicklinksLabel}>Quick answers:</span>
           <div className={styles.quicklinksRow}>
-            {['Self-contained?', 'Distance to gate', 'Facilities', 'Braai & fire', 'How to book', 'What is Ethlathini?'].map((label, i) => (
-              <a key={i} href={`#faq-${i}`} className={styles.quicklink}>{label}</a>
+            {QUICK_LINKS.map((link, i) => (
+              <a key={i} href={`#faq-${i}`} className={styles.quicklink}>
+                <Image
+                  src={link.icon}
+                  alt={link.label}
+                  width={20}
+                  height={20}
+                  className={styles.quicklinkIcon}
+                />
+                {link.label}
+              </a>
             ))}
           </div>
         </div>
@@ -111,7 +140,15 @@ export default function FAQPage() {
           {/* ── Sidebar CTA ── */}
           <aside className={styles.sidebar}>
             <div className={styles.sidebarCard}>
-              <div className={styles.sidebarIcon}>🏕️</div>
+              <div className={styles.sidebarIcon}>
+                <Image
+                  src="/images/icons/volunteer/volunteer-rooms-in-main-house-icon.png"
+                  alt="Book a site"
+                  width={40}
+                  height={40}
+                  className={styles.sidebarIconImg}
+                />
+              </div>
               <h3>Ready to visit?</h3>
               <p>Book your overland campsite directly — no platform fees.</p>
               <Link href="/book" className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '0.75rem' }}>
@@ -119,7 +156,15 @@ export default function FAQPage() {
               </Link>
             </div>
             <div className={styles.sidebarCard}>
-              <div className={styles.sidebarIcon}>💬</div>
+              <div className={styles.sidebarIcon}>
+                <Image
+                  src="/images/icons/volunteer/phone-whatsapp-icon.png"
+                  alt="WhatsApp us"
+                  width={40}
+                  height={40}
+                  className={styles.sidebarIconImg}
+                />
+              </div>
               <h3>Still have questions?</h3>
               <p>WhatsApp us — we&apos;re usually online from 06:30.</p>
               <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer"
@@ -128,7 +173,15 @@ export default function FAQPage() {
               </a>
             </div>
             <div className={styles.sidebarCard}>
-              <div className={styles.sidebarIcon}>🌿</div>
+              <div className={styles.sidebarIcon}>
+                <Image
+                  src="/images/icons/volunteer/want-to-volunteer-icon.png"
+                  alt="Volunteer"
+                  width={40}
+                  height={40}
+                  className={styles.sidebarIconImg}
+                />
+              </div>
               <h3>Want to volunteer?</h3>
               <p>Be part of building something meaningful in Hluhluwe.</p>
               <Link href="/volunteer" className="btn-secondary" style={{ width: '100%', justifyContent: 'center', marginTop: '0.75rem' }}>

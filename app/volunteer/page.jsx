@@ -1,5 +1,6 @@
 // app/volunteer/page.jsx
 import Link from 'next/link'
+import Image from 'next/image'
 import { pageMeta, breadcrumbSchema, SITE } from '../../lib/seo'
 import { StructuredData } from '../../components/StructuredData'
 import styles from './volunteer.module.css'
@@ -45,22 +46,82 @@ function volunteerSchema() {
 }
 
 const TASKS = [
-  { icon: '🌿', title: 'Clearing invasive plants',     desc: 'Chromolaena, lantana, and prickly pear are being cleared metre by metre to restore indigenous forest. Physical, rewarding, and directly visible progress.' },
-  { icon: '🏗️', title: 'Building infrastructure',      desc: 'Ablutions, site improvements, fencing, signage, and general property maintenance. Basic tools provided — building experience a bonus but not required.' },
-  { icon: '🌱', title: 'Community food garden',         desc: 'Planting, watering, weeding, and maintaining the food garden that feeds the community development programme.' },
-  { icon: '🐟', title: 'Fish farm development',         desc: 'Help set up aquaculture infrastructure as part of the community skills programme.' },
-  { icon: '📚', title: 'Skills development support',    desc: 'If you have skills in hospitality, IT, agriculture, trades, or teaching — there is meaningful work here training the next generation.' },
-  { icon: '🌳', title: 'Forest restoration',            desc: 'Propagating indigenous trees and plants in the nursery, replanting cleared areas, and general forest care.' },
+  { 
+    icon: "/images/icons/volunteer/clearing-invasive-species-icon.png",
+    title: 'Clearing invasive plants',     
+    desc: 'Chromolaena, lantana, and prickly pear are being cleared metre by metre to restore indigenous forest. Physical, rewarding, and directly visible progress.',
+    alt: 'Clearing invasive species icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/building-infrastructure-icon.png",
+    title: 'Building infrastructure',      
+    desc: 'Ablutions, site improvements, fencing, signage, and general property maintenance. Basic tools provided — building experience a bonus but not required.',
+    alt: 'Building infrastructure icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/community-garden-icon.png",
+    title: 'Community food garden',         
+    desc: 'Planting, watering, weeding, and maintaining the food garden that feeds the community development programme.',
+    alt: 'Community garden icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/fishfarm-development-icon.png",
+    title: 'Fish farm development',         
+    desc: 'Help set up aquaculture infrastructure as part of the community skills programme.',
+    alt: 'Fish farm development icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/skills-development-support-icon.png",
+    title: 'Skills development support',    
+    desc: 'If you have skills in hospitality, IT, agriculture, trades, or teaching — there is meaningful work here training the next generation.',
+    alt: 'Skills development support icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/forest-restoration-icon.png",
+    title: 'Forest restoration',            
+    desc: 'Propagating indigenous trees and plants in the nursery, replanting cleared areas, and general forest care.',
+    alt: 'Forest restoration icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/wildilfe-monitoring-rehabilitation-icon.png",
+    title: 'Wildlife monitoring & rehabilitation',            
+    desc: 'Assist with wildlife tracking, data collection, and rehabilitation efforts in and around Hluhluwe-iMfolozi Park. Learn about conservation first-hand.',
+    alt: 'Wildlife monitoring and rehabilitation icon'
+  },
+  { 
+    icon: "/images/icons/volunteer/community-educational-programmes-icon.png",
+    title: 'Community schools & educational activities',            
+    desc: 'Support local pre-schools and community schools with teaching, reading programmes, arts and crafts, and educational activities that make a real difference.',
+    alt: 'Community educational programmes icon'
+  },
 ]
 
-const WHAT_YOU_GET = [
-  '🏠 A room in the main house (shared bathroom)',
-  '🍽️ Meals included (we cook together)',
-  '🌿 Live and work in a mahogany and fig forest',
-  '🦁 Access to Hluhluwe-iMfolozi Park (2km away) on your days off',
-  '🤝 Real community connection — not tourist-facing',
-  '📜 Reference letter on completion of a meaningful stay',
-  '☕ Coffee shop access when it opens',
+const PACKAGE_INCLUDES = [
+  { icon: "/images/icons/volunteer/volunteer-rooms-in-main-house-icon.png", label: 'Accommodation in the main house (shared bathroom)', alt: 'Volunteer rooms icon' },
+  { icon: "/images/icons/volunteer/meals-included-icon.png", label: 'Meals included (we cook together)', alt: 'Meals included icon' },
+  { icon: "/images/icons/volunteer/transport-to-and-from-activities-icon.png", label: 'Transport to and from local activities', alt: 'Transport icon' },
+  { icon: "/images/icons/volunteer/hluhluwe-imfolozi-park-icon.png", label: 'Access to Hluhluwe-iMfolozi Park (2km away) on your days off', alt: 'Hluhluwe-iMfolozi Park icon' },
+  { icon: "/images/icons/volunteer/forest-icon.png", label: 'Live and work in a mahogany and fig forest', alt: 'Forest icon' },
+  { icon: "/images/icons/volunteer/real-community-connection-icon.png", label: 'Real community connection — not tourist-facing', alt: 'Community connection icon' },
+  { icon: "/images/icons/volunteer/reference-letter-icon.png", label: 'Reference letter on completion of a meaningful stay', alt: 'Reference letter icon' },
+  { icon: "/images/icons/volunteer/coffee-shop-access-when-open-icon.png", label: 'Coffee shop access when it opens', alt: 'Coffee shop icon' },
+]
+
+const STAY_DETAILS = [
+  { icon: "/images/icons/volunteer/min-stay-1-week-icon.png", label: 'Minimum stay', value: '1 week' },
+  { icon: "/images/icons/volunteer/work-hours-icon.png", label: 'Work hours', value: '4 hrs/day, weekdays' },
+  { icon: "/images/icons/volunteer/who-icon.png", label: 'Who', value: '18+ · all nationalities' },
+  { icon: "/images/icons/volunteer/language-icon.png", label: 'Language', value: 'English required' },
+  { icon: "/images/icons/volunteer/custom-packages-icon.png", label: 'Packages', value: 'Customised — enquire for details' },
+]
+
+const CUSTOM_ACTIVITIES = [
+  'Guided walks in the forest',
+  'Birdwatching excursions',
+  'Visits to local community projects',
+  'Game viewing in Hluhluwe-iMfolozi Park',
+  'Cultural experiences with the Bhejane community',
+  'Day trips to nearby attractions',
 ]
 
 export default function VolunteerPage() {
@@ -76,7 +137,16 @@ export default function VolunteerPage() {
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
-        <div className="wrap">
+        <Image
+          src="/images/photos/hero-volunteer-schools-project.jpg"
+          alt="Volunteers working with community schools project in Hluhluwe"
+          fill
+          className={styles.heroBg}
+          priority
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} />
+        <div className={`wrap ${styles.heroContent}`}>
           <span className="eyebrow">Voluntourism · Workaway South Africa · Eco Camp</span>
           <h1>Be part of<br /><em>building something real</em></h1>
           <p>
@@ -86,7 +156,7 @@ export default function VolunteerPage() {
           </p>
           <div className={styles.heroBtns}>
             <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              💬 WhatsApp us to apply
+              💬 WhatsApp us to enquire
             </a>
             <a href={`mailto:${SITE.email}`} className="btn-ghost">
               ✉️ Email us
@@ -114,7 +184,15 @@ export default function VolunteerPage() {
           <div className={styles.tasksGrid}>
             {TASKS.map(t => (
               <div key={t.title} className={styles.taskCard}>
-                <div className={styles.taskIcon}>{t.icon}</div>
+                <div className={styles.taskIcon}>
+                  <Image
+                    src={t.icon}
+                    alt={t.alt}
+                    width={48}
+                    height={48}
+                    className={styles.taskIconImg}
+                  />
+                </div>
                 <h3>{t.title}</h3>
                 <p>{t.desc}</p>
               </div>
@@ -128,29 +206,58 @@ export default function VolunteerPage() {
         <div className={`wrap ${styles.benefitsInner}`}>
           <div>
             <span className="eyebrow">What volunteers receive</span>
-            <h2 className={styles.h2}>Your stay, covered.</h2>
+            <h2 className={styles.h2}>Your stay, fully arranged.</h2>
             <p className={styles.benefitsSub}>
-              In exchange for meaningful work (minimum 4 hours per weekday),
-              we provide accommodation and meals. This is a workaway-style arrangement —
-              genuine exchange, not employment.
+              We offer <strong>paid volunteer packages</strong> that include accommodation, meals, 
+              transport, and activities — fully customised to your interests and availability. 
+              This is a true partnership — your contribution directly strengthens Ethlathini, uplifts the Bhejane community, and supports conservation across the greater Big Five Hlabisa region, all while immersing you in the real KwaZulu-Natal.
             </p>
             <ul className={styles.benefitsList}>
-              {WHAT_YOU_GET.map((item, i) => (
-                <li key={i} className={styles.benefitItem}>{item}</li>
+              {PACKAGE_INCLUDES.map((item, i) => (
+                <li key={i} className={styles.benefitItem}>
+                  <div className={styles.benefitIcon}>
+                    <Image
+                      src={item.icon}
+                      alt={item.alt}
+                      width={28}
+                      height={28}
+                      className={styles.benefitIconImg}
+                    />
+                  </div>
+                  <span>{item.label}</span>
+                </li>
               ))}
             </ul>
           </div>
           <div className={styles.stayCard}>
-            <h3>Volunteer rooms</h3>
+            <h3>Volunteer packages</h3>
             <p>
-              We have <strong>2 rooms</strong> available in the main house for volunteers.
-              Shared bathroom. Simple, clean, and in the forest.
+              We offer <strong>customised volunteer packages</strong> to suit your needs.
+              Accommodation, meals, transport, and activities are all included.
             </p>
-            <div className={styles.stayDetail}><span>📅 Minimum stay</span><strong>2 weeks</strong></div>
-            <div className={styles.stayDetail}><span>⏰ Work hours</span><strong>4 hrs/day, weekdays</strong></div>
-            <div className={styles.stayDetail}><span>🌍 Who</span><strong>18+ · all nationalities</strong></div>
-            <div className={styles.stayDetail}><span>🗣️ Language</span><strong>English required</strong></div>
-            <div className={styles.stayDetail}><span>🐾 Pets</span><strong>On request</strong></div>
+            {STAY_DETAILS.map((detail, i) => (
+              <div key={i} className={styles.stayDetail}>
+                <div className={styles.stayDetailIcon}>
+                  <Image
+                    src={detail.icon}
+                    alt={detail.label}
+                    width={24}
+                    height={24}
+                    className={styles.stayDetailIconImg}
+                  />
+                </div>
+                <span>{detail.label}</span>
+                <strong>{detail.value}</strong>
+              </div>
+            ))}
+            <div className={styles.customActivities}>
+              <p><strong>Custom activities may include:</strong></p>
+              <ul>
+                {CUSTOM_ACTIVITIES.map((activity, i) => (
+                  <li key={i}>{activity}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -184,21 +291,22 @@ export default function VolunteerPage() {
       {/* ── Apply CTA ── */}
       <section className={styles.cta}>
         <div className={`wrap ${styles.ctaInner}`}>
-          <h2>Ready to apply?</h2>
+          <h2>Ready to enquire?</h2>
           <p>
             WhatsApp or email us with a short introduction — who you are, when you&apos;re available,
-            and what you&apos;d like to contribute. No CV needed. Just be honest.
+            what you&apos;d like to contribute, and what kind of package you&apos;re interested in. 
+            No CV needed. Just be honest.
           </p>
           <div className={styles.ctaBtns}>
             <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary">
               💬 WhatsApp {SITE.phoneDisplay}
             </a>
-            <a href={`mailto:${SITE.email}?subject=Volunteer enquiry — Ethlathini`} className="btn-ghost">
+            <a href={`mailto:${SITE.email}?subject=Volunteer package enquiry — Ethlathini`} className="btn-ghost">
               ✉️ {SITE.email}
             </a>
           </div>
           <p className={styles.ctaNote}>
-            We reply to all enquiries within 48 hours · Spaces are limited to 2 volunteers at a time
+            We reply to all enquiries within 48 hours · Custom packages available · Spaces are limited
           </p>
         </div>
       </section>

@@ -148,9 +148,46 @@ export default function HomePage() {
 
       {/* ── Strip ── */}
       <div className={styles.strip}>
-        {['🏕️ Overland campsites', '🌿 Mahogany & fig forest', '🦁 Big 5 · 2km', '☕ Coffee shop coming soon'].map(t => (
-          <span key={t} className={styles.stripItem}>{t}</span>
-        ))}
+        <span className={styles.stripItem}>
+          <Image
+            src="/images/icons/overland-campsite-icon-south-africa.png"
+            alt="Overland campsites"
+            width={24}
+            height={24}
+            className={styles.stripIcon}
+          />
+          Overland campsites
+        </span>
+        <span className={styles.stripItem}>
+          <Image
+            src="/images/icons/mahogany-fig-forest-icon.png"
+            alt="Mahogany and fig forest"
+            width={24}
+            height={24}
+            className={styles.stripIcon}
+          />
+          Mahogany &amp; fig forest
+        </span>
+        <span className={styles.stripItem}>
+          <Image
+            src="/images/icons/big5-game-reserve-icon-hluhluwe.png"
+            alt="Big 5 game reserve"
+            width={24}
+            height={24}
+            className={styles.stripIcon}
+          />
+          Big 5 · 2km
+        </span>
+        <span className={styles.stripItem}>
+          <Image
+            src="/images/icons/coffee-shop-icon.png"
+            alt="Coffee shop coming soon"
+            width={24}
+            height={24}
+            className={styles.stripIcon}
+          />
+          Coffee shop coming soon
+        </span>
       </div>
 
       {/* ── Split — camp photo ── */}

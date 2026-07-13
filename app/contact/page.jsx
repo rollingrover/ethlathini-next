@@ -1,4 +1,5 @@
 // app/contact/page.jsx
+import Image from 'next/image'
 import { pageMeta, breadcrumbSchema, SITE } from '../../lib/seo'
 import { StructuredData } from '../../components/StructuredData'
 import ContactForm from './ContactForm'
@@ -53,7 +54,16 @@ export default function ContactPage() {
 
       {/* ── Hero ── */}
       <section className={styles.hero}>
-        <div className="wrap">
+        <Image
+          src="/images/photos/contact-hero.jpg"
+          alt="Contact Ethlathini Rest Camp in Hluhluwe, KwaZulu-Natal"
+          fill
+          className={styles.heroBg}
+          priority
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} />
+        <div className={`wrap ${styles.heroContent}`}>
           <span className="eyebrow">Get in touch</span>
           <h1>Contact Ethlathini</h1>
           <p>We&apos;re usually online from 06:30. WhatsApp is the fastest way to reach us.</p>
@@ -70,7 +80,15 @@ export default function ContactPage() {
             {/* Direct contact */}
             <div className={styles.contactCards}>
               <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className={styles.contactCard}>
-                <div className={styles.contactCardIcon}>💬</div>
+                <div className={styles.contactCardIcon}>
+                  <Image
+                    src="/images/icons/volunteer/phone-whatsapp-icon.png"
+                    alt="WhatsApp"
+                    width={32}
+                    height={32}
+                    className={styles.contactCardIconImg}
+                  />
+                </div>
                 <div>
                   <div className={styles.contactCardLabel}>WhatsApp (fastest)</div>
                   <div className={styles.contactCardVal}>{SITE.phoneDisplay}</div>
@@ -78,7 +96,15 @@ export default function ContactPage() {
                 </div>
               </a>
               <a href={`tel:${SITE.phone}`} className={styles.contactCard}>
-                <div className={styles.contactCardIcon}>📞</div>
+                <div className={styles.contactCardIcon}>
+                  <Image
+                    src="/images/icons/volunteer/phone-whatsapp-icon.png"
+                    alt="Phone"
+                    width={32}
+                    height={32}
+                    className={styles.contactCardIconImg}
+                  />
+                </div>
                 <div>
                   <div className={styles.contactCardLabel}>Phone</div>
                   <div className={styles.contactCardVal}>{SITE.phoneDisplay}</div>
@@ -86,7 +112,15 @@ export default function ContactPage() {
                 </div>
               </a>
               <a href={`mailto:${SITE.email}`} className={styles.contactCard}>
-                <div className={styles.contactCardIcon}>✉️</div>
+                <div className={styles.contactCardIcon}>
+                  <Image
+                    src="/images/icons/volunteer/ready-to-visit-icon.png"
+                    alt="Email"
+                    width={32}
+                    height={32}
+                    className={styles.contactCardIconImg}
+                  />
+                </div>
                 <div>
                   <div className={styles.contactCardLabel}>Email</div>
                   <div className={styles.contactCardVal}>{SITE.email}</div>
@@ -97,13 +131,29 @@ export default function ContactPage() {
 
             {/* Address */}
             <div className={styles.addressCard}>
-              <div className={styles.addressLabel}>📍 Physical address</div>
+              <div className={styles.addressIcon}>
+                <Image
+                  src="/images/icons/volunteer/physical-address-icon.png"
+                  alt="Address"
+                  width={28}
+                  height={28}
+                  className={styles.addressIconImg}
+                />
+              </div>
+              <div className={styles.addressLabel}>Physical address</div>
               <div className={styles.addressVal}>
                 Memorial Gate Road<br />
                 Hluhluwe, KwaZulu-Natal<br />
                 South Africa, 3960
               </div>
               <div className={styles.addressGps}>
+                <Image
+                  src="/images/icons/volunteer/gps-icon.png"
+                  alt="GPS"
+                  width={16}
+                  height={16}
+                  className={styles.addressGpsIcon}
+                />
                 GPS: <code>-28.056694, 32.154616</code>
               </div>
               <a

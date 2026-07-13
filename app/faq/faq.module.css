@@ -61,3 +61,271 @@
 .sidebarIcon { font-size: 24px; margin-bottom: 0.5rem; }
 .sidebarCard h3 { font-size: 15px; font-weight: 600; color: var(--forest); margin-bottom: 0.35rem; }
 .sidebarCard p { font-size: 13px; color: var(--bark); line-height: 1.55; }
+/* ── Hero ──────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.heroBg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 20, 12, 0.8) 0%, rgba(26, 46, 28, 0.6) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  color: #F5EFE6;
+}
+
+.heroContent h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 500;
+  color: #F5EFE6;
+  margin: 0.4rem 0 1rem;
+  line-height: 1.2;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  color: #F5EFE6;
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.heroContent p a {
+  color: #C4874A;
+  text-decoration: underline;
+}
+
+.heroContent .eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #C4874A;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Quick Links ───────────────────────────── */
+.quicklinks {
+  background: var(--sand);
+  border-top: 3px solid var(--terracotta);
+  border-bottom: 1px solid rgba(196, 97, 42, 0.15);
+  padding: 1rem 0;
+}
+
+.quicklinks .wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.quicklinksLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quicklinksRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.quicklink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 13px;
+  color: var(--forest);
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: background 0.2s, color 0.2s;
+}
+
+.quicklink:hover {
+  background: #fff;
+  color: var(--terracotta);
+}
+
+.quicklinkIcon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* ── FAQ Section ───────────────────────────── */
+.faqSection {
+  padding: var(--py) 0;
+  background: var(--cream-bg);
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faqItem {
+  background: #fff;
+  border-radius: var(--r-md);
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--terracotta);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  scroll-margin-top: 80px;
+}
+
+.faqQ {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--forest);
+  margin: 0 0 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.faqNum {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--terracotta);
+  opacity: 0.6;
+  flex-shrink: 0;
+  min-width: 30px;
+}
+
+.faqA {
+  font-size: 14px;
+  color: var(--bark);
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 2.25rem;
+}
+
+/* ── Sidebar ───────────────────────────────── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebarCard {
+  background: #fff;
+  border-radius: var(--r-md);
+  padding: 1.5rem;
+  border: 1px solid rgba(196, 97, 42, 0.14);
+  text-align: center;
+}
+
+.sidebarIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sidebarIconImg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.sidebarCard h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--forest);
+  margin: 0 0 0.25rem;
+}
+
+.sidebarCard p {
+  font-size: 13px;
+  color: var(--bark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+    padding: 3rem 0;
+  }
+
+  .heroContent h1 {
+    font-size: 2.2rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .quicklinks .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .quicklinksRow {
+    gap: 0.6rem;
+  }
+
+  .quicklink {
+    font-size: 12px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .faqItem {
+    padding: 1.25rem;
+  }
+
+  .faqQ {
+    font-size: 16px;
+  }
+
+  .faqA {
+    font-size: 13px;
+    padding-left: 1.5rem;
+  }
+
+  .sidebar {
+    gap: 1rem;
+  }
+}

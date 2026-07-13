@@ -8,6 +8,7 @@ const PARTNERS = [
   { href: 'https://www.zatours.co.za',                label: 'ZAtours' },
   { href: 'https://www.mzamovillagehomestead.co.za',  label: 'Mzamo Cultural Village & Homestead' },
   { href: 'https://www.opdesk.app',                   label: 'OpDesk' },
+  { href: 'https://www.dizakwasmolo.co.za',           label: 'Diza-KwaSmolo Community Uplifting Initiative' },
 ]
 
 export default function Footer() {

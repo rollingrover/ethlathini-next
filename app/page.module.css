@@ -218,3 +218,45 @@
     grid-template-columns: 1fr;
   }
 }
+.strip {
+  background: var(--sand);
+  border-top: 3px solid var(--terracotta);
+  border-bottom: 1px solid rgba(196, 97, 42, 0.15);
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stripItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.stripIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .strip {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .stripItem {
+    font-size: 12px;
+  }
+  
+  .stripIcon {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -54,3 +54,290 @@
 .formSuccess h3 { font-size: 18px; font-weight: 500; color: var(--forest); }
 .formSuccess p { font-size: 13px; color: var(--bark); max-width: 280px; line-height: 1.6; }
 .formNote { font-size: 11px; color: #999; text-align: center; margin-top: 0.5rem; }
+/* ── Hero ──────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.heroBg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 20, 12, 0.8) 0%, rgba(26, 46, 28, 0.6) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  color: #F5EFE6;
+}
+
+.heroContent h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 500;
+  color: #F5EFE6;
+  margin: 0.4rem 0 1rem;
+  line-height: 1.2;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  color: #F5EFE6;
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.heroContent .eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #C4874A;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Body ──────────────────────────────────── */
+.body {
+  padding: var(--py) 0;
+  background: var(--cream-bg);
+}
+
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .bodyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Contact Cards ─────────────────────────── */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border-radius: var(--r-md);
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(196, 97, 42, 0.14);
+  text-decoration: none;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.contactCard:hover {
+  box-shadow: 0 4px 16px rgba(28, 58, 24, 0.08);
+  transform: translateY(-2px);
+}
+
+.contactCardIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactCardIconImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.contactCardLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contactCardVal {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.contactCardNote {
+  font-size: 12px;
+  color: var(--bark);
+  opacity: 0.6;
+}
+
+/* ── Address Card ──────────────────────────── */
+.addressCard {
+  background: #fff;
+  border-radius: var(--r-md);
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(196, 97, 42, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.addressIcon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.addressIconImg {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.addressLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.addressVal {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--forest);
+}
+
+.addressGps {
+  font-size: 13px;
+  color: var(--bark);
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.addressGpsIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.addressGps code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: rgba(196, 97, 42, 0.08);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  color: var(--forest);
+}
+
+/* ── Map ───────────────────────────────────── */
+.mapWrap {
+  background: #fff;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid rgba(196, 97, 42, 0.14);
+  height: 220px;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Form Side ────────────────────────────── */
+.formSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.formCard {
+  background: #fff;
+  border-radius: var(--r-md);
+  padding: 2rem;
+  border: 1px solid rgba(196, 97, 42, 0.14);
+}
+
+.formCard h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--forest);
+  margin: 0 0 0.25rem;
+}
+
+.formCard p {
+  font-size: 14px;
+  color: var(--bark);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.formCard p a {
+  color: var(--terracotta);
+  text-decoration: underline;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+    padding: 3rem 0;
+  }
+
+  .heroContent h1 {
+    font-size: 2.2rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .contactCard {
+    padding: 0.75rem 1rem;
+  }
+
+  .contactCardVal {
+    font-size: 14px;
+  }
+
+  .addressCard {
+    padding: 1rem 1.25rem;
+  }
+
+  .formCard {
+    padding: 1.25rem;
+  }
+
+  .mapWrap {
+    height: 180px;
+  }
+}

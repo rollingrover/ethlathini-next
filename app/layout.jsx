@@ -29,10 +29,10 @@ export const metadata = {
   },
   twitter: { card: 'summary_large_image' },
   icons: {
-    icon:  [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon_32x32.png', type: 'image/png' }],
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/favicon_180x180.png',
   },
-  manifest: '/site.webmanifest',
 }
 
 // viewport and themeColor must be exported separately in Next.js 14
@@ -46,29 +46,10 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    // NOTE for Part D: when [locale] layout is added, move lang to the locale layout
     <html lang="en-ZA">
       <head>
-        {/*
-          LocalBusiness + CampingGround schema on every page.
-          Pages that need additional schemas (home, about, book, find-us)
-          render extra <StructuredData> components inline in their JSX.
-        */}
         <StructuredData data={localBusinessSchema()} />
-        {/*
-          No manual <link> font tags needed — next/font handles preloading,
-          self-hosting, and crossOrigin automatically. External font links
-          removed to eliminate render-blocking requests and FOIT.
-        */}
       </head>
-      {/*
-        lora.variable    injects --font-display CSS variable
-        dmSans.variable  injects --font-body CSS variable
-        Both are available globally via var(--font-display) and var(--font-body) in CSS.
-
-        Part D — locale layouts: add the locale-specific font variable class here,
-        e.g. for /zh: className={`${lora.variable} ${dmSans.variable} ${notoSansSC.variable}`}
-      */}
       <body className={`${lora.variable} ${dmSans.variable}`}>
         <Navbar />
         <main>{children}</main>
