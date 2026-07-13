@@ -96,7 +96,10 @@ export default function FAQPage() {
         <div className={styles.heroOverlay} />
         <div className={`wrap ${styles.heroContent}`}>
           <span className="eyebrow">Frequently Asked Questions</span>
-          <h1>FAQ — Camping at Ethlathini</h1>
+          <h1>
+            FAQ — Camping at<br />
+            <em>Ethlathini</em>
+          </h1>
           <p>Everything you need to know before you visit. Can&apos;t find your answer? <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp us directly.</a></p>
         </div>
       </section>

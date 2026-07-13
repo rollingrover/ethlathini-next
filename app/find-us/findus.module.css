@@ -1,33 +1,42 @@
 /* ── Hero ──────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 42vh;
+  min-height: 50vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background: var(--forest);
-  padding: 0 0 3rem;
 }
 
 .heroBg {
   object-fit: cover;
-  object-position: center 50%;
-  z-index: 0;
+  object-position: center 30%;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(20, 40, 14, 0.3) 0%, rgba(20, 40, 14, 0.82) 100%);
-  z-index: 1;
+  background: linear-gradient(to bottom, rgba(20, 40, 14, 0.25) 0%, rgba(20, 40, 14, 0.78) 100%);
 }
 
 .heroContent {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 2rem;
-  color: #F5EFE6;
+  z-index: 1;
+  padding-bottom: 3rem;
+  padding-top: 4rem;
+}
+
+.heroContent h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 500;
+  color: var(--cream);
+  margin-top: 0.4rem;
+  line-height: 1.2;
+}
+
+.heroContent h1 em {
+  color: var(--terracotta);
+  font-style: italic;
 }
 
 .heroContent .eyebrow {
@@ -35,24 +44,16 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #C4874A;
+  color: var(--terracotta);
   margin-bottom: 0.25rem;
 }
 
-.heroContent h1 {
-  font-family: var(--font-display);
-  font-size: clamp(30px, 5vw, 50px);
-  font-weight: 500;
-  color: #F5EFE6;
-  margin: 0.4rem 0 0.75rem;
-  padding-top: 2rem;
-}
-
 .heroContent p {
-  font-size: 1.1rem;
-  color: #F5EFE6;
-  max-width: 500px;
-  line-height: 1.7;
+  font-size: 15px;
+  color: rgba(240, 224, 192, 0.7);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 0;
 }
 
 /* ── Body ──────────────────────────────────── */
@@ -205,16 +206,14 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 35vh;
-    padding: 0 0 2rem;
   }
 
   .heroContent h1 {
     font-size: clamp(24px, 6vw, 34px);
-    padding-top: 1.5rem;
   }
 
   .heroContent p {
-    font-size: 1rem;
+    font-size: 14px;
   }
 
   .mapWrap {

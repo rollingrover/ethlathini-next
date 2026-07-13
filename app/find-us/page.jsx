@@ -24,23 +24,23 @@ export default function FindUsPage() {
       } />
       
       {/* ── Hero ── */}
-      <section className={styles.hero}>
-        <Image
-          src="/images/photos/main-road-sunrise-approach-ethlathini-hluhluwe.jpg"
-          alt="Sunrise on the main road approaching Ethlathini Rest Camp and Hluhluwe-iMfolozi Memorial Gate"
-          fill
-          className={styles.heroBg}
-          priority
-          fetchPriority="high"
-          quality={80}
-          sizes="100vw"
-        />
-        <div className={styles.heroOverlay} />
-        <div className={`wrap ${styles.heroContent}`}>
-          <span className="eyebrow" style={{ color: '#C4874A' }}>Getting here</span>
-          <h1>Find us</h1>
-          <p>On the main road to Memorial Gate, 2km before the entrance to Hluhluwe-iMfolozi Park.</p>
-        </div>
+<section className={styles.hero}>
+  <Image
+    src="/images/photos/main-road-sunrise-approach-ethlathini-hluhluwe.jpg"
+    alt="Sunrise on the main road approaching Ethlathini Rest Camp and Hluhluwe-iMfolozi Memorial Gate"
+    fill
+    className={styles.heroBg}
+    priority
+    fetchPriority="high"
+    quality={80}
+    sizes="100vw"
+    />
+      <div className={styles.heroOverlay} />
+      <div className={`wrap ${styles.heroContent}`}>
+      <span className="eyebrow" style={{ color: '#C4874A' }}>Getting here</span>
+      <h1>You can find us<br /><em>in the forest</em></h1>
+      <p>On the main road to Memorial Gate, 2km before the entrance to Hluhluwe-iMfolozi Park.</p>
+      </div>
       </section>
 
       {/* ── Body ── */}

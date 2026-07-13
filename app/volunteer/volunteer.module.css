@@ -1,47 +1,41 @@
 /* ── Hero ──────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
+  align-items: flex-end;
   overflow: hidden;
-  padding: 4rem 0;
 }
 
 .heroBg {
   object-fit: cover;
-  z-index: 0;
+  object-position: center 30%;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10, 20, 12, 0.8) 0%, rgba(26, 46, 28, 0.6) 100%);
-  z-index: 1;
+  background: linear-gradient(to bottom, rgba(20, 40, 14, 0.25) 0%, rgba(20, 40, 14, 0.78) 100%);
 }
 
 .heroContent {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 2rem;
-  color: #F5EFE6;
+  z-index: 1;
+  padding-bottom: 3rem;
+  padding-top: 4rem;
 }
 
 .heroContent h1 {
   font-family: var(--font-display);
   font-size: clamp(28px, 5vw, 52px);
   font-weight: 500;
-  color: #F5EFE6;
-  margin: 0.4rem 0 1rem;
+  color: var(--cream);
+  margin-top: 0.4rem;
   line-height: 1.2;
 }
 
 .heroContent h1 em {
-  color: #C4874A;
+  color: var(--terracotta);
   font-style: italic;
 }
 
@@ -50,20 +44,20 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #C4874A;
-  margin-bottom: 0.5rem;
+  color: var(--terracotta);
+  margin-bottom: 0.25rem;
 }
 
 .heroContent p {
-  font-size: 1.1rem;
-  color: #F5EFE6;
-  max-width: 650px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.7;
+  font-size: 15px;
+  color: rgba(240, 224, 192, 0.7);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
 }
 
 .heroContent p a {
-  color: #C4874A;
+  color: var(--terracotta);
   text-decoration: underline;
 }
 
@@ -72,6 +66,7 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 /* ── Honest Banner ─────────────────────────── */
@@ -99,6 +94,7 @@
   font-weight: 500;
   color: var(--forest);
   margin: 0.4rem 0 1.5rem;
+  text-align: center;
 }
 
 /* ── Tasks Section ─────────────────────────── */
@@ -119,6 +115,7 @@
   padding: 1.4rem;
   border: 1px solid rgba(196, 97, 42, 0.14);
   transition: box-shadow 0.2s;
+  text-align: center;
 }
 
 .taskCard:hover {
@@ -127,6 +124,9 @@
 
 .taskIcon {
   margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .taskIconImg {
@@ -377,16 +377,15 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 60vh;
-    padding: 3rem 0;
+    min-height: 35vh;
   }
 
   .heroContent h1 {
-    font-size: 2.5rem;
+    font-size: clamp(24px, 6vw, 34px);
   }
 
   .heroContent p {
-    font-size: 1rem;
+    font-size: 14px;
   }
 
   .heroBtns {
@@ -406,5 +405,15 @@
 
   .stayCard {
     position: static;
+  }
+
+  .benefitsInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .tasksGrid {
+    grid-template-columns: 1fr;
   }
 }

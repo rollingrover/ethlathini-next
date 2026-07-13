@@ -53,21 +53,21 @@ export default function ContactPage() {
       ]} />
 
       {/* ── Hero ── */}
-      <section className={styles.hero}>
-        <Image
-          src="/images/photos/contact-hero.jpg"
-          alt="Contact Ethlathini Rest Camp in Hluhluwe, KwaZulu-Natal"
-          fill
-          className={styles.heroBg}
-          priority
-          sizes="100vw"
-        />
-        <div className={styles.heroOverlay} />
-        <div className={`wrap ${styles.heroContent}`}>
-          <span className="eyebrow">Get in touch</span>
-          <h1>Contact Ethlathini</h1>
-          <p>We&apos;re usually online from 06:30. WhatsApp is the fastest way to reach us.</p>
-        </div>
+<section className={styles.hero}>
+  <Image
+    src="/images/photos/contact-hero.jpg"
+    alt="Contact Ethlathini Rest Camp in Hluhluwe, KwaZulu-Natal"
+    fill
+    className={styles.heroBg}
+    priority
+    sizes="100vw"
+  />
+      <div className={styles.heroOverlay} />
+      <div className={`wrap ${styles.heroContent}`}>
+      <span className="eyebrow">Get in touch</span>
+      <h1>Contact us<br /><em>at Ethlathini</em></h1>
+      <p>We&apos;re usually online from 06:30. WhatsApp is the fastest way to reach us.</p>
+      </div>
       </section>
 
       {/* ── Contact methods + form ── */}

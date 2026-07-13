@@ -1,31 +1,50 @@
 /* ── Hero ──────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 42vh;
+  min-height: 50vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background: var(--forest);
-  padding: 0 0 3rem;
 }
 
 .heroBg {
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 30%;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(28,58,24,0.45) 0%, rgba(28,58,24,0.85) 100%);
+  background: linear-gradient(to bottom, rgba(20, 40, 14, 0.25) 0%, rgba(20, 40, 14, 0.78) 100%);
 }
 
 .heroContent {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 2rem;
-  color: #F5EFE6;
+  z-index: 1;
+  padding-bottom: 3rem;
+  padding-top: 4rem;
+}
+
+.heroContent h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 500;
+  color: var(--cream);
+  margin-top: 0.4rem;
+  line-height: 1.2;
+}
+
+.heroContent h1 em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+.heroContent p {
+  font-size: 15px;
+  color: rgba(240, 224, 192, 0.7);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 0;
 }
 
 .heroContent .eyebrow {
@@ -33,24 +52,8 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #C4874A;
+  color: var(--terracotta);
   margin-bottom: 0.25rem;
-}
-
-.heroContent h1 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 5vw, 48px);
-  font-weight: 500;
-  color: #F5EFE6;
-  margin: 0.4rem 0 0.75rem;
-  padding-top: 2rem;
-}
-
-.heroContent p {
-  font-size: 1.1rem;
-  color: #F5EFE6;
-  max-width: 540px;
-  line-height: 1.65;
 }
 
 /* ── Notice ────────────────────────────────── */
@@ -78,7 +81,7 @@
 
 .rateCard {
   background: #fff;
-  border: 1px solid rgba(196,97,42,0.2);
+  border: 1px solid rgba(196, 97, 42, 0.2);
   border-radius: var(--r-md);
   padding: 1.25rem;
   cursor: pointer;
@@ -86,7 +89,7 @@
 }
 
 .rateCard:hover {
-  box-shadow: 0 4px 20px rgba(28,58,24,0.1);
+  box-shadow: 0 4px 20px rgba(28, 58, 24, 0.1);
 }
 
 .featured {
@@ -97,7 +100,7 @@
 .selected {
   border-color: var(--forest);
   border-width: 2px;
-  box-shadow: 0 0 0 3px rgba(28,58,24,0.1);
+  box-shadow: 0 0 0 3px rgba(28, 58, 24, 0.1);
 }
 
 .badge {
@@ -154,7 +157,7 @@
   list-style: none;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid rgba(196,97,42,0.12);
+  border-top: 1px solid rgba(196, 97, 42, 0.12);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -187,7 +190,7 @@
   border-radius: var(--r-sm);
   padding: 0.75rem;
   text-align: center;
-  border: 1px solid rgba(196,97,42,0.15);
+  border: 1px solid rgba(196, 97, 42, 0.15);
 }
 
 .extraPrice {
@@ -206,8 +209,8 @@
 .inclusions {
   background: #fff;
   padding: 2rem 0;
-  border-top: 1px solid rgba(196,97,42,0.1);
-  border-bottom: 1px solid rgba(196,97,42,0.1);
+  border-top: 1px solid rgba(196, 97, 42, 0.1);
+  border-bottom: 1px solid rgba(196, 97, 42, 0.1);
 }
 
 .inclGrid {
@@ -218,7 +221,7 @@
 
 .inclItem {
   background: var(--cream-bg);
-  border: 1px solid rgba(196,97,42,0.15);
+  border: 1px solid rgba(196, 97, 42, 0.15);
   border-radius: var(--r-sm);
   padding: 0.75rem;
   display: flex;
@@ -294,7 +297,7 @@
   background: #fff;
   border-radius: var(--r-sm);
   padding: 1rem 1.1rem;
-  border: 1px solid rgba(196,97,42,0.15);
+  border: 1px solid rgba(196, 97, 42, 0.15);
 }
 
 .policyTitle {
@@ -319,7 +322,7 @@
 
 .formCard {
   background: var(--cream-bg);
-  border: 1px solid rgba(196,97,42,0.2);
+  border: 1px solid rgba(196, 97, 42, 0.2);
   border-radius: var(--r-lg);
   overflow: hidden;
   max-width: 800px;
@@ -405,7 +408,7 @@
 }
 
 .siteOpt {
-  border: 1px solid rgba(196,97,42,0.25);
+  border: 1px solid rgba(196, 97, 42, 0.25);
   border-radius: var(--r-sm);
   padding: 0.6rem 0.75rem;
   cursor: pointer;
@@ -559,7 +562,7 @@
 
 .wa span {
   font-size: 13px;
-  color: rgba(240,224,192,0.6);
+  color: rgba(240, 224, 192, 0.6);
 }
 
 .wa strong {
@@ -596,7 +599,7 @@
 }
 
 .faqItem {
-  border-bottom: 1px solid rgba(196,97,42,0.15);
+  border-bottom: 1px solid rgba(196, 97, 42, 0.15);
   cursor: pointer;
   background: #fff;
   border-radius: 8px;
@@ -646,7 +649,10 @@
 
   .heroContent h1 {
     font-size: clamp(24px, 6vw, 34px);
-    padding-top: 1.5rem;
+  }
+
+  .heroContent p {
+    font-size: 14px;
   }
 
   .ratesGrid {

@@ -2,13 +2,6 @@
 // ─────────────────────────────────────────────────────────────────
 // SERVER COMPONENT — no 'use client'. Renders fully in initial HTML.
 // Composes the static RatesTable (SSR) + dynamic BookingWidget (CSR).
-//
-// Why this matters:
-//   BEFORE: entire page was 'use client' + returned null on server
-//           → zero HTML to crawlers, zero LCP content
-//   AFTER:  hero, notice, rates table = server-rendered static HTML
-//           → crawlers index "Hluhluwe camping rates", "overland KZN price"
-//           → LCP resolves without JS hydration
 
 import Image from 'next/image'
 import { breadcrumbSchema, campingOfferSchema } from '../../lib/seo'
@@ -41,11 +34,9 @@ export default function BookPage() {
           sizes="100vw"
         />
         <div className={styles.heroOverlay} />
-        <div className={`wrap ${styles.heroContent}`}>
-          <span className="eyebrow" style={{ color: '#C4874A' }}>
-            Overland Campsites · Self-Contained Only
-          </span>
-          <h1>Book your site in the forest</h1>
+        <div className={'wrap ' + styles.heroContent}>
+          <span className="eyebrow" style={{color:"#C4874A"}}>Overland Campsites · Self-Contained Only</span>
+          <h1>Book your site<br /><em>in the forest</em></h1>
           <p>
             4 cleared sites under mahogany, fig &amp; tree aloe canopy,
             2km from Memorial Gate, Hluhluwe-iMfolozi Park.
@@ -62,19 +53,10 @@ export default function BookPage() {
         </div>
       </div>
 
-      {/* ── Static rates table — server-rendered, crawler-visible ──
-          This is the SEO-critical section. Targets:
-          "Hluhluwe camping rates" · "overland campsite KZN price"
-          "Hluhluwe-iMfolozi camping cost" · "forest camping South Africa"
-          Renders in initial HTML — no JS required.
-      ── */}
+      {/* ── Static rates table — server-rendered, crawler-visible ── */}
       <RatesTable />
 
-      {/* ── Interactive booking widget — client-rendered ──
-          'use client' is contained inside BookingWidget only.
-          The server renders a <div> shell; React hydrates it client-side.
-          This does NOT affect the RatesTable above — it's already in HTML.
-      ── */}
+      {/* ── Interactive booking widget — client-rendered ── */}
       <BookingWidget />
     </>
   )
