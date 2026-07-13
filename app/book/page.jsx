@@ -41,7 +41,7 @@ export default function BookPage() {
           sizes="100vw"
         />
         <div className={styles.heroOverlay} />
-        <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
+        <div className={`wrap ${styles.heroContent}`}>
           <span className="eyebrow" style={{ color: '#C4874A' }}>
             Overland Campsites · Self-Contained Only
           </span>
