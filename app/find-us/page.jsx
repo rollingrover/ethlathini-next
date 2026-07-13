@@ -90,7 +90,7 @@ export default function FindUsPage() {
                 />
               </div>
               <div className={styles.cardLabel}>GPS</div>
-              <div className={styles.cardVal}>28°03'24.10"S, 32°09'16.62"E</div>
+              <div className={styles.cardVal}>28°03′24.10″S, 32°09′16.62″E</div>
               <div className={styles.cardNote}>Decimal: -28.056694, 32.154616</div>
             </div>
 
