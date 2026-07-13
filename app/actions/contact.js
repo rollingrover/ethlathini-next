@@ -3,6 +3,11 @@
 
 import { Resend } from 'resend';
 
+// Debug: Check if environment variables exist
+console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
+console.log('EMAIL_FROM:', process.env.EMAIL_FROM);
+console.log('EMAIL_TO:', process.env.EMAIL_TO);
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendContactEmail(formData) {
@@ -11,12 +16,20 @@ export async function sendContactEmail(formData) {
   const subject = formData.get('subject') || 'No subject';
   const message = formData.get('message');
 
-  // Validation
+  // Debug: Log form data
+  console.log('Form data:', { name, email, subject, message });
+
   if (!name || !email || !message) {
+    console.log('Validation failed: missing fields');
     return { success: false, message: 'All fields are required.' };
   }
 
   try {
+    console.log('Attempting to send email...');
+    console.log('From:', process.env.EMAIL_FROM);
+    console.log('To:', process.env.EMAIL_TO);
+    console.log('API Key present:', !!process.env.RESEND_API_KEY);
+
     const { data, error } = await resend.emails.send({
       from: process.env.EMAIL_FROM,
       to: [process.env.EMAIL_TO],
@@ -50,6 +63,7 @@ This message was sent from the Ethlathini Rest Camp website contact form.
       return { success: false, message: 'Failed to send message. Please try again.' };
     }
 
+    console.log('Email sent successfully:', data);
     return { success: true };
   } catch (error) {
     console.error('Server error:', error);
