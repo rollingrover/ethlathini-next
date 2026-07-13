@@ -31,14 +31,21 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Nav */}
+        {/* Nav — two columns */}
         <nav className={styles.nav} aria-label="Footer navigation">
-          <Link href="/">Home</Link>
-          <Link href="/book">Book & rates</Link>
-          <Link href="/about">About</Link>
-          <Link href="/vision">Our Vision</Link>
-          <Link href="/dream">The Dream</Link>
-          <Link href="/find-us">Find us</Link>
+          <div className={styles.navCol}>
+            <Link href="/">Home</Link>
+            <Link href="/book">Book & rates</Link>
+            <Link href="/about">About</Link>
+            <Link href="/vision">Our Vision</Link>
+            <Link href="/dream">The Dream</Link>
+          </div>
+          <div className={styles.navCol}>
+            <Link href="/volunteer">Volunteer</Link>
+            <Link href="/faq">FAQ</Link>
+            <Link href="/find-us">Find us</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
         </nav>
 
         {/* Contact */}

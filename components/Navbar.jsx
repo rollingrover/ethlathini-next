@@ -6,12 +6,15 @@ import { usePathname } from 'next/navigation'
 import styles from './Navbar.module.css'
 
 const NAV = [
-  { href: '/',         label: 'Home' },
-  { href: '/book',     label: 'Book & rates' },
-  { href: '/about',    label: 'About' },
-  { href: '/vision',   label: 'Our Vision' },
-  { href: '/dream',    label: 'The Dream' },
-  { href: '/find-us',  label: 'Find us' },
+  { href: '/',          label: 'Home' },
+  { href: '/book',      label: 'Book & rates' },
+  { href: '/about',     label: 'About' },
+  { href: '/vision',    label: 'Our Vision' },
+  { href: '/dream',     label: 'The Dream' },
+  { href: '/volunteer', label: 'Volunteer' },
+  { href: '/faq',       label: 'FAQ' },
+  { href: '/find-us',   label: 'Find us' },
+  { href: '/contact',   label: 'Contact' },
 ]
 
 export default function Navbar() {

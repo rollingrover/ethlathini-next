@@ -48,10 +48,8 @@ export default function DreamPage() {
             <hr className={styles.divider} />
             
             <h2>Come Help Us Build</h2>
-            
-            <p>We have <strong>two rooms available in the main house</strong> for volunteers who want to be part of this journey. If you are handy with tools, love the outdoors, or just want to contribute to something meaningful, we would love to have you.</p>
-            
-            <p><strong>Volunteer packages are available</strong> — contact us for details.</p>
+            <p>We have <strong>two rooms available in the main house</strong> for volunteers who want to be part of this journey — clearing invasive plants, building infrastructure, planting the community garden, and more.</p>
+            <p>If you want to do real work that matters, in a forest, next to a game reserve, with a community that will welcome you — <a href="/volunteer" style={{color:"var(--terracotta)"}}>read the full volunteer page</a>.</p>
             
             <hr className={styles.divider} />
                                   

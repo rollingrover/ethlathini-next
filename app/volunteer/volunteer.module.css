@@ -1,0 +1,46 @@
+.hero { background: var(--forest); padding: var(--py) 0 3.5rem; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(28px,5vw,52px); font-weight: 500; color: var(--cream); margin: 0.4rem 0 1rem; line-height: 1.2; }
+.hero h1 em { color: var(--terracotta); font-style: italic; }
+.hero p { font-size: 15px; color: rgba(240,224,192,0.7); max-width: 540px; line-height: 1.7; margin-bottom: 1.25rem; }
+.heroBtns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.honestBanner { background: var(--sand); border-top: 3px solid var(--terracotta); border-bottom: 1px solid rgba(196,97,42,0.2); padding: 1rem 0; }
+.honestBanner .wrap { font-size: 14px; color: var(--bark); line-height: 1.65; }
+.honestBanner strong { color: var(--forest); }
+
+.h2 { font-family: var(--font-display); font-size: clamp(22px,3vw,34px); font-weight: 500; color: var(--forest); margin: 0.4rem 0 1.5rem; }
+
+.tasks { padding: var(--py) 0; background: var(--cream-bg); }
+.tasksGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.1rem; }
+.taskCard { background: #fff; border-radius: var(--r-md); padding: 1.4rem; border: 1px solid rgba(196,97,42,0.14); transition: box-shadow 0.2s; }
+.taskCard:hover { box-shadow: 0 4px 20px rgba(28,58,24,0.09); }
+.taskIcon { font-size: 26px; margin-bottom: 0.6rem; }
+.taskCard h3 { font-size: 15px; font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; }
+.taskCard p { font-size: 13px; color: var(--bark); line-height: 1.6; }
+
+.benefits { padding: var(--py) 0; background: #fff; }
+.benefitsInner { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; align-items: start; }
+@media (max-width: 800px) { .benefitsInner { grid-template-columns: 1fr; } }
+.benefitsSub { font-size: 15px; color: var(--bark); line-height: 1.7; margin-bottom: 1.25rem; max-width: 500px; }
+.benefitsList { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.benefitItem { font-size: 14px; color: var(--forest); padding: 0.5rem 0; border-bottom: 1px solid rgba(196,97,42,0.1); }
+.benefitItem:last-child { border-bottom: none; }
+
+.stayCard { background: var(--cream-bg); border: 1px solid rgba(196,97,42,0.2); border-radius: var(--r-md); padding: 1.4rem; position: sticky; top: 80px; }
+.stayCard h3 { font-size: 17px; font-weight: 600; color: var(--forest); margin-bottom: 0.5rem; }
+.stayCard p { font-size: 13px; color: var(--bark); line-height: 1.6; margin-bottom: 1rem; }
+.stayDetail { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid rgba(196,97,42,0.1); font-size: 13px; }
+.stayDetail:last-child { border-bottom: none; }
+.stayDetail span { color: var(--bark); }
+.stayDetail strong { color: var(--forest); }
+
+.story { padding: var(--py) 0; background: var(--cream-bg); }
+.story p { font-size: 15px; color: var(--bark); line-height: 1.75; margin-bottom: 1rem; max-width: 680px; }
+.story em { color: var(--forest); font-style: italic; }
+
+.cta { background: var(--forest); padding: var(--py) 0; }
+.ctaInner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+.ctaInner h2 { font-family: var(--font-display); font-size: clamp(24px,4vw,40px); font-weight: 500; color: var(--cream); }
+.ctaInner > p { font-size: 14px; color: rgba(240,224,192,0.6); max-width: 480px; line-height: 1.7; }
+.ctaBtns { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+.ctaNote { font-size: 12px; color: rgba(240,224,192,0.4); margin-top: -0.25rem; }
