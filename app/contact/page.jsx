@@ -60,6 +60,8 @@ export default function ContactPage() {
     fill
     className={styles.heroBg}
     priority
+    fetchPriority="high"
+    quality={80}
     sizes="100vw"
   />
       <div className={styles.heroOverlay} />
@@ -86,6 +88,7 @@ export default function ContactPage() {
                     alt="WhatsApp"
                     width={32}
                     height={32}
+                    sizes="32px"
                     className={styles.contactCardIconImg}
                   />
                 </div>
@@ -102,6 +105,7 @@ export default function ContactPage() {
                     alt="Phone"
                     width={32}
                     height={32}
+                    sizes="32px"
                     className={styles.contactCardIconImg}
                   />
                 </div>
@@ -118,6 +122,7 @@ export default function ContactPage() {
                     alt="Email"
                     width={32}
                     height={32}
+                    sizes="32px"
                     className={styles.contactCardIconImg}
                   />
                 </div>
@@ -137,6 +142,7 @@ export default function ContactPage() {
                   alt="Address"
                   width={28}
                   height={28}
+                  sizes="28px"
                   className={styles.addressIconImg}
                 />
               </div>
@@ -152,6 +158,7 @@ export default function ContactPage() {
                   alt="GPS"
                   width={16}
                   height={16}
+                  sizes="16px"
                   className={styles.addressGpsIcon}
                 />
                 GPS: <code>-28.056694, 32.154616</code>

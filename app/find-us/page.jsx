@@ -67,6 +67,7 @@ export default function FindUsPage() {
                   alt="Address"
                   width={28}
                   height={28}
+                  sizes="28px"
                   className={styles.cardIconImg}
                 />
               </div>
@@ -86,6 +87,7 @@ export default function FindUsPage() {
                   alt="GPS"
                   width={28}
                   height={28}
+                  sizes="28px"
                   className={styles.cardIconImg}
                 />
               </div>
@@ -102,6 +104,7 @@ export default function FindUsPage() {
                   alt="Distance"
                   width={28}
                   height={28}
+                  sizes="28px"
                   className={styles.cardIconImg}
                 />
               </div>
@@ -118,6 +121,7 @@ export default function FindUsPage() {
                   alt="Phone and WhatsApp"
                   width={28}
                   height={28}
+                  sizes="28px"
                   className={styles.cardIconImg}
                 />
               </div>

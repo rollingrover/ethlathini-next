@@ -143,6 +143,8 @@ export default function VolunteerPage() {
           fill
           className={styles.heroBg}
           priority
+          fetchPriority="high"
+          quality={80}
           sizes="100vw"
         />
         <div className={styles.heroOverlay} />
@@ -190,6 +192,7 @@ export default function VolunteerPage() {
                     alt={t.alt}
                     width={48}
                     height={48}
+                    sizes="48px"
                     className={styles.taskIconImg}
                   />
                 </div>
@@ -221,6 +224,7 @@ export default function VolunteerPage() {
                       alt={item.alt}
                       width={28}
                       height={28}
+                      sizes="28px"
                       className={styles.benefitIconImg}
                     />
                   </div>
@@ -243,6 +247,7 @@ export default function VolunteerPage() {
                     alt={detail.label}
                     width={24}
                     height={24}
+                    sizes="24px"
                     className={styles.stayDetailIconImg}
                   />
                 </div>

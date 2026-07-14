@@ -154,6 +154,7 @@ export default function HomePage() {
             alt="Overland campsites"
             width={24}
             height={24}
+            sizes="24px"
             className={styles.stripIcon}
           />
           Overland campsites
@@ -164,6 +165,7 @@ export default function HomePage() {
             alt="Mahogany and fig forest"
             width={24}
             height={24}
+            sizes="24px"
             className={styles.stripIcon}
           />
           Mahogany &amp; fig forest
@@ -174,6 +176,7 @@ export default function HomePage() {
             alt="Big 5 game reserve"
             width={24}
             height={24}
+            sizes="24px"
             className={styles.stripIcon}
           />
           Big 5 · 2km
@@ -184,6 +187,7 @@ export default function HomePage() {
             alt="Coffee shop coming soon"
             width={24}
             height={24}
+            sizes="24px"
             className={styles.stripIcon}
           />
           Coffee shop coming soon

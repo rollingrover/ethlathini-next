@@ -5,6 +5,16 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Minimal HTML-escaping so submitted text can't break out of the email markup
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export async function sendBookingEmail(formData) {
   const name = formData.get('name');
   const surname = formData.get('surname');
@@ -65,23 +75,23 @@ This booking request was sent from the Ethlathini Rest Camp website.
         <h2>New Booking Request</h2>
         
         <h3>Guest Details</h3>
-        <p><strong>Name:</strong> ${name} ${surname}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)} ${escapeHtml(surname)}</p>
+        <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
         
         <h3>Stay Details</h3>
-        <p><strong>Arrival:</strong> ${arrive}</p>
-        <p><strong>Departure:</strong> ${depart}</p>
+        <p><strong>Arrival:</strong> ${escapeHtml(arrive)}</p>
+        <p><strong>Departure:</strong> ${escapeHtml(depart)}</p>
         <p><strong>Nights:</strong> ${nights}</p>
-        <p><strong>Adults:</strong> ${adults}</p>
-        <p><strong>Children:</strong> ${children}</p>
+        <p><strong>Adults:</strong> ${escapeHtml(adults)}</p>
+        <p><strong>Children:</strong> ${escapeHtml(children)}</p>
         
         <h3>Site Details</h3>
-        <p><strong>Site Type:</strong> ${siteType}</p>
-        <p><strong>Vehicle:</strong> ${vehicle || 'Not specified'}</p>
+        <p><strong>Site Type:</strong> ${escapeHtml(siteType)}</p>
+        <p><strong>Vehicle:</strong> ${escapeHtml(vehicle || 'Not specified')}</p>
         
         <h3>Additional Notes</h3>
-        <p style="background: #f9f7f3; padding: 1rem; border-radius: 8px; border-left: 4px solid #C4874A;">${notes || 'None'}</p>
+        <p style="background: #f9f7f3; padding: 1rem; border-radius: 8px; border-left: 4px solid #C4874A;">${escapeHtml(notes || 'None')}</p>
         
         <hr style="border: none; border-top: 1px solid #e8e4de; margin: 1rem 0;" />
         <p style="font-size: 12px; color: #8a8a8a;">This booking request was sent from the Ethlathini Rest Camp website.</p>

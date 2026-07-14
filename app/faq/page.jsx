@@ -91,6 +91,8 @@ export default function FAQPage() {
           fill
           className={styles.heroBg}
           priority
+          fetchPriority="high"
+          quality={80}
           sizes="100vw"
         />
         <div className={styles.heroOverlay} />
@@ -116,6 +118,7 @@ export default function FAQPage() {
                   alt={link.label}
                   width={20}
                   height={20}
+                  sizes="20px"
                   className={styles.quicklinkIcon}
                 />
                 {link.label}
@@ -149,6 +152,7 @@ export default function FAQPage() {
                   alt="Book a site"
                   width={40}
                   height={40}
+                  sizes="40px"
                   className={styles.sidebarIconImg}
                 />
               </div>
@@ -165,6 +169,7 @@ export default function FAQPage() {
                   alt="WhatsApp us"
                   width={40}
                   height={40}
+                  sizes="40px"
                   className={styles.sidebarIconImg}
                 />
               </div>
@@ -182,6 +187,7 @@ export default function FAQPage() {
                   alt="Volunteer"
                   width={40}
                   height={40}
+                  sizes="40px"
                   className={styles.sidebarIconImg}
                 />
               </div>
