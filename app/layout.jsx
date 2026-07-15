@@ -34,6 +34,10 @@ export const metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon_180x180.png',
   },
+  // Google Site Verification
+  verification: {
+    google: 'nglJoEM50BkNJh8ElvLPWLJTflv1WScCmP5y3KNJtLQ',
+  },
 }
 
 // viewport and themeColor must be exported separately in Next.js 14
