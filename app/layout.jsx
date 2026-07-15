@@ -34,9 +34,10 @@ export const metadata = {
     shortcut: '/favicon.ico',
     apple: '/favicon_180x180.png',
   },
-  // Google Site Verification
+  // Site Verifications
   verification: {
     google: 'nglJoEM50BkNJh8ElvLPWLJTflv1WScCmP5y3KNJtLQ',
+    yandex: '6e03e845974924ee',
   },
 }
 
