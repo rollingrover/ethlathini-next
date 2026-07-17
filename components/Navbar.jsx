@@ -1,25 +1,27 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
+import { Link, usePathname } from '../i18n/routing'
+import LanguageSwitcher from './LanguageSwitcher'
 import styles from './Navbar.module.css'
-
-const NAV = [
-  { href: '/',          label: 'Home' },
-  { href: '/book',      label: 'Book & rates' },
-  { href: '/about',     label: 'About' },
-  { href: '/vision',    label: 'Our Vision' },
-  { href: '/dream',     label: 'The Dream' },
-  { href: '/volunteer', label: 'Volunteer' },
-  { href: '/faq',       label: 'FAQ' },
-  { href: '/find-us',   label: 'Find us' },
-  { href: '/contact',   label: 'Contact' },
-]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  const t = useTranslations('nav')
+
+  const NAV = [
+    { href: '/',          label: t('home') },
+    { href: '/book',      label: t('book') },
+    { href: '/about',     label: t('about') },
+    { href: '/vision',    label: t('vision') },
+    { href: '/dream',     label: t('dream') },
+    { href: '/volunteer', label: t('volunteer') },
+    { href: '/faq',       label: t('faq') },
+    { href: '/find-us',   label: t('findUs') },
+    { href: '/contact',   label: t('contact') },
+  ]
 
   return (
     <header className={styles.navbar}>
@@ -61,14 +63,21 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/book" className={styles.cta} onClick={() => setOpen(false)}>
-            Book now
+            {t('bookNow')}
           </Link>
+          <div className={styles.langSwitcherMobile}>
+            <LanguageSwitcher variant="dark" />
+          </div>
         </nav>
+
+        <div className={styles.langSwitcherDesktop}>
+          <LanguageSwitcher variant="dark" />
+        </div>
 
         <button
           className={styles.burger}
           onClick={() => setOpen(!open)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? t('closeMenu') : t('openMenu')}
           aria-expanded={open}
         >
           <span className={open ? styles.burgerOpen : ''} />

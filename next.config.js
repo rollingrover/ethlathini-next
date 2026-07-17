@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const createNextIntlPlugin = require('next-intl/plugin')
+const withNextIntl = createNextIntlPlugin('./i18n/request.js')
 
 const isProd = process.env.VERCEL_ENV === 'production'
 
@@ -61,4 +63,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withNextIntl(nextConfig)

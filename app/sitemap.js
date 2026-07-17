@@ -1,25 +1,35 @@
 // app/sitemap.js
 // Next.js 14 generates /sitemap.xml automatically from this file.
-// Uses SITE.domain from lib/seo.js — single source of truth for the www domain.
+// Part D: one entry per page × locale (9 pages × 11 locales = 99 URLs),
+// each carrying the full reciprocal hreflang alternate set.
 
-import { SITE } from '../lib/seo'
+import { SITE, localePath, hreflangAlternates } from '../lib/seo'
+import { locales } from '../i18n/routing'
+
+const PAGES = [
+  { path: '',            changeFrequency: 'weekly',  priority: 1.0 },
+  { path: '/book',       changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/contact',    changeFrequency: 'yearly',  priority: 0.8 },
+  { path: '/find-us',    changeFrequency: 'yearly',  priority: 0.8 },
+  { path: '/faq',        changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/about',      changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/vision',     changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/dream',      changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/volunteer',  changeFrequency: 'monthly', priority: 0.7 },
+]
 
 export default function sitemap() {
-  const base = SITE.domain  // https://www.ethlathini.co.za
-  const now  = new Date().toISOString()
+  const now = new Date().toISOString()
 
-  return [
-    // ── Core pages ────────────────────────────────────────────────
-    { url: `${base}/`,          lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${base}/book`,      lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/contact`,   lastModified: now, changeFrequency: 'yearly',  priority: 0.8 },
-    { url: `${base}/find-us`,   lastModified: now, changeFrequency: 'yearly',  priority: 0.8 },
-    { url: `${base}/faq`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    // ── Story / brand pages ───────────────────────────────────────
-    { url: `${base}/about`,     lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/vision`,    lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/dream`,     lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    // ── Voluntourism ─────────────────────────────────────────────
-    { url: `${base}/volunteer`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-  ]
+  return PAGES.flatMap(page =>
+    locales.map(locale => ({
+      url: `${SITE.domain}${localePath(locale, page.path)}`,
+      lastModified: now,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+      alternates: {
+        languages: hreflangAlternates(page.path),
+      },
+    }))
+  )
 }

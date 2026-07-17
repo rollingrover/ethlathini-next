@@ -1,20 +1,23 @@
-// app/contact/page.jsx
+// app/[locale]/contact/page.jsx
 import Image from 'next/image'
-import { pageMeta, breadcrumbSchema, SITE } from '../../lib/seo'
-import { StructuredData } from '../../components/StructuredData'
+import { getTranslations } from 'next-intl/server'
+import { Link } from '../../../i18n/routing'
+import { pageMeta, breadcrumbSchema, SITE } from '../../../lib/seo'
+import { StructuredData } from '../../../components/StructuredData'
 import ContactForm from './ContactForm'
 import styles from './contact.module.css'
 
-export const metadata = pageMeta({
-  path: '/contact',
-  title: 'Contact Us — Ethlathini Rest Camp, Hluhluwe',
-  description: 'Contact Ethlathini Rest Camp in Hluhluwe, KwaZulu-Natal. Phone, WhatsApp, email, or fill in the form. GPS: -28.056694, 32.154616.',
-})
+export async function generateMetadata({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'contact' })
+  return pageMeta({ locale, path: '/contact', title: t('meta_title'), description: t('meta_description') })
+}
 
-function contactPageSchema() {
+function contactPageSchema(locale) {
   return {
     '@context': 'https://schema.org',
     '@type':    'ContactPage',
+    inLanguage: locale,
     name:       `Contact ${SITE.name}`,
     url:        `${SITE.domain}/contact`,
     description:'Contact Ethlathini Rest Camp — phone, WhatsApp, email, or contact form.',
@@ -41,15 +44,18 @@ function contactPageSchema() {
   }
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'contact' })
+
   return (
     <>
       <StructuredData data={[
-        contactPageSchema(),
+        contactPageSchema(locale),
         breadcrumbSchema([
           { name: 'Home',    path: '/' },
-          { name: 'Contact', path: '/contact' },
-        ]),
+          { name: t('breadcrumb_name'), path: '/contact' },
+        ], locale),
       ]} />
 
       {/* ── Hero ── */}
@@ -66,9 +72,9 @@ export default function ContactPage() {
   />
       <div className={styles.heroOverlay} />
       <div className={`wrap ${styles.heroContent}`}>
-      <span className="eyebrow">Get in touch</span>
-      <h1>Contact us<br /><em>at Ethlathini</em></h1>
-      <p>We&apos;re usually online from 06:30. WhatsApp is the fastest way to reach us.</p>
+      <span className="eyebrow">{t('eyebrow')}</span>
+      <h1>{t('h1_line1')}<br /><em>{t('h1_em')}</em></h1>
+      <p>{t('hero_p')}</p>
       </div>
       </section>
 
@@ -93,9 +99,9 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <div className={styles.contactCardLabel}>WhatsApp (fastest)</div>
+                  <div className={styles.contactCardLabel}>{t('card_whatsapp_label')}</div>
                   <div className={styles.contactCardVal}>{SITE.phoneDisplay}</div>
-                  <div className={styles.contactCardNote}>Usually online from 06:30</div>
+                  <div className={styles.contactCardNote}>{t('card_whatsapp_note')}</div>
                 </div>
               </a>
               <a href={`tel:${SITE.phone}`} className={styles.contactCard}>
@@ -110,9 +116,9 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <div className={styles.contactCardLabel}>Phone</div>
+                  <div className={styles.contactCardLabel}>{t('card_phone_label')}</div>
                   <div className={styles.contactCardVal}>{SITE.phoneDisplay}</div>
-                  <div className={styles.contactCardNote}>07:00–20:00 daily</div>
+                  <div className={styles.contactCardNote}>{t('card_phone_note')}</div>
                 </div>
               </a>
               <a href={`mailto:${SITE.email}`} className={styles.contactCard}>
@@ -127,9 +133,9 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <div className={styles.contactCardLabel}>Email</div>
+                  <div className={styles.contactCardLabel}>{t('card_email_label')}</div>
                   <div className={styles.contactCardVal}>{SITE.email}</div>
-                  <div className={styles.contactCardNote}>We reply within 24 hours</div>
+                  <div className={styles.contactCardNote}>{t('card_email_note')}</div>
                 </div>
               </a>
             </div>
@@ -146,16 +152,12 @@ export default function ContactPage() {
                   className={styles.addressIconImg}
                 />
               </div>
-              <div className={styles.addressLabel}>Physical address</div>
-              <div className={styles.addressVal}>
-                Memorial Gate Road<br />
-                Hluhluwe, KwaZulu-Natal<br />
-                South Africa, 3960
-              </div>
+              <div className={styles.addressLabel}>{t('address_label')}</div>
+              <div className={styles.addressVal} dangerouslySetInnerHTML={{ __html: t('address_val') }} />
               <div className={styles.addressGps}>
                 <Image
                   src="/images/icons/volunteer/gps-icon.png"
-                  alt="GPS"
+                  alt="GPS coordinates -28.056694, 32.154616"
                   width={16}
                   height={16}
                   sizes="16px"
@@ -170,7 +172,7 @@ export default function ContactPage() {
                 className="btn-primary"
                 style={{ marginTop: '0.75rem', display: 'inline-flex' }}
               >
-                🗺️ Get directions
+                {t('getDirections')}
               </a>
             </div>
 
@@ -193,8 +195,8 @@ export default function ContactPage() {
           {/* ── Right: contact form (client component) ── */}
           <div className={styles.formSide}>
             <div className={styles.formCard}>
-              <h2>Send us a message</h2>
-              <p>For booking requests, please use the <a href="/book">Book &amp; Rates page</a>. For everything else, use this form.</p>
+              <h2>{t('form_h2')}</h2>
+              <p>{t('form_p_pre')}<Link href="/book">{t('form_p_link')}</Link>{t('form_p_post')}</p>
               {/* ContactForm is 'use client' — interactive */}
               <ContactForm />
             </div>

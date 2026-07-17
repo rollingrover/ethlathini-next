@@ -1,10 +1,12 @@
 'use client'
-// app/contact/ContactForm.jsx
+// app/[locale]/contact/ContactForm.jsx
 import { useState } from 'react'
-import { sendContactEmail } from '../actions/contact'
+import { useTranslations } from 'next-intl'
+import { sendContactEmail } from '../../actions/contact'
 import styles from './contact.module.css'
 
 export default function ContactForm() {
+  const t = useTranslations('contact')
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [status, setStatus] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
   const [statusMessage, setStatusMessage] = useState('')
@@ -27,11 +29,11 @@ export default function ContactForm() {
 
     if (result.success) {
       setStatus('success')
-      setStatusMessage('Message sent successfully! We\'ll get back to you within 24 hours.')
+      setStatusMessage(t('form_success_message'))
       setForm({ name: '', email: '', subject: '', message: '' }) // Clear form
     } else {
       setStatus('error')
-      setStatusMessage(result.message || 'Something went wrong. Please try again.')
+      setStatusMessage(result.message || t('form_error_default'))
     }
   }
 
@@ -39,14 +41,14 @@ export default function ContactForm() {
     return (
       <div className={styles.formSuccess}>
         <div style={{ fontSize: 36 }}>🌿</div>
-        <h3>Message received!</h3>
-        <p>We&apos;ll be in touch within 24 hours. For urgent enquiries, WhatsApp us directly.</p>
-        <button 
-          onClick={() => setStatus('idle')} 
-          className="btn-secondary" 
+        <h3>{t('form_success_h3')}</h3>
+        <p>{t('form_success_p')}</p>
+        <button
+          onClick={() => setStatus('idle')}
+          className="btn-secondary"
           style={{ marginTop: '0.5rem' }}
         >
-          Send another message
+          {t('form_sendAnother')}
         </button>
       </div>
     )
@@ -56,48 +58,48 @@ export default function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formGrid}>
         <div className={styles.field}>
-          <label htmlFor="contact-name">Your name *</label>
+          <label htmlFor="contact-name">{t('field_name')}</label>
           <input
             id="contact-name"
             required
             value={form.name}
             onChange={set('name')}
-            placeholder="Your name"
+            placeholder={t('field_name_placeholder')}
             disabled={status === 'sending'}
           />
         </div>
         <div className={styles.field}>
-          <label htmlFor="contact-email">Email address *</label>
+          <label htmlFor="contact-email">{t('field_email')}</label>
           <input
             id="contact-email"
             type="email"
             required
             value={form.email}
             onChange={set('email')}
-            placeholder="you@email.com"
+            placeholder={t('field_email_placeholder')}
             disabled={status === 'sending'}
           />
         </div>
       </div>
       <div className={styles.field} style={{ marginBottom: '1rem' }}>
-        <label htmlFor="contact-subject">Subject</label>
+        <label htmlFor="contact-subject">{t('field_subject')}</label>
         <input
           id="contact-subject"
           value={form.subject}
           onChange={set('subject')}
-          placeholder="e.g. Booking enquiry, volunteer, general question"
+          placeholder={t('field_subject_placeholder')}
           disabled={status === 'sending'}
         />
       </div>
       <div className={styles.field} style={{ marginBottom: '1rem' }}>
-        <label htmlFor="contact-message">Message *</label>
+        <label htmlFor="contact-message">{t('field_message')}</label>
         <textarea
           id="contact-message"
           required
           rows={5}
           value={form.message}
           onChange={set('message')}
-          placeholder="Tell us what you need..."
+          placeholder={t('field_message_placeholder')}
           disabled={status === 'sending'}
         />
       </div>
@@ -108,16 +110,16 @@ export default function ContactForm() {
         </div>
       )}
 
-      <button 
-        type="submit" 
-        className="btn-primary" 
+      <button
+        type="submit"
+        className="btn-primary"
         style={{ width: '100%', justifyContent: 'center' }}
         disabled={status === 'sending'}
       >
-        {status === 'sending' ? 'Sending...' : 'Send message →'}
+        {status === 'sending' ? t('submit_sending') : t('submit_default')}
       </button>
       <p className={styles.formNote}>
-        We reply within 24 hours · For faster response WhatsApp us directly
+        {t('form_footnote')}
       </p>
     </form>
   )

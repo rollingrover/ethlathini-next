@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "next-intl": "^4.13.2",
     "resend": "^6.17.2"
   }
 }

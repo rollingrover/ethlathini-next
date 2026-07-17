@@ -1,24 +1,34 @@
-// app/book/page.jsx
+// app/[locale]/book/page.jsx
 // ─────────────────────────────────────────────────────────────────
 // SERVER COMPONENT — no 'use client'. Renders fully in initial HTML.
 // Composes the static RatesTable (SSR) + dynamic BookingWidget (CSR).
 
 import Image from 'next/image'
-import { breadcrumbSchema, campingOfferSchema } from '../../lib/seo'
-import { StructuredData } from '../../components/StructuredData'
+import { getTranslations } from 'next-intl/server'
+import { pageMeta, breadcrumbSchema, campingOfferSchema } from '../../../lib/seo'
+import { StructuredData } from '../../../components/StructuredData'
 import RatesTable from './RatesTable'
 import BookingWidget from './BookingWidget'
 import styles from './book.module.css'
 
-export default function BookPage() {
+export async function generateMetadata({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'book' })
+  return pageMeta({ locale, path: '/book', title: t('meta_title'), description: t('meta_description') })
+}
+
+export default async function BookPage({ params }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'book' })
+
   return (
     <>
       <StructuredData data={[
-        campingOfferSchema(),
+        campingOfferSchema(locale),
         breadcrumbSchema([
           { name: 'Home',          path: '/' },
-          { name: 'Book & Rates',  path: '/book' },
-        ]),
+          { name: t('breadcrumb_name'), path: '/book' },
+        ], locale),
       ]} />
 
       {/* ── Hero — server-rendered, priority LCP ── */}
@@ -35,29 +45,24 @@ export default function BookPage() {
         />
         <div className={styles.heroOverlay} />
         <div className={'wrap ' + styles.heroContent}>
-          <span className="eyebrow" style={{color:"#C4874A"}}>Overland Campsites · Self-Contained Only</span>
-          <h1>Book your site<br /><em>in the forest</em></h1>
-          <p>
-            4 cleared sites under mahogany, fig &amp; tree aloe canopy,
-            2km from Memorial Gate, Hluhluwe-iMfolozi Park.
-            Firepits. Free firewood. Pure bush quiet.
-          </p>
+          <span className="eyebrow" style={{color:"#C4874A"}}>{t('eyebrow')}</span>
+          <h1>{t('h1_line1')}<br /><em>{t('h1_em')}</em></h1>
+          <p>{t('hero_p')}</p>
         </div>
       </section>
 
       {/* ── Availability notice — server-rendered ── */}
       <div className={styles.notice}>
         <div className="wrap">
-          🏕️ <strong>4 overland sites open now</strong> — ablutions under development,
-          self-contained campers only. Chalets, coffee shop &amp; restaurant coming soon.
+          {t.rich('notice', { strong: (chunks) => <strong>{chunks}</strong> })}
         </div>
       </div>
 
       {/* ── Static rates table — server-rendered, crawler-visible ── */}
-      <RatesTable />
+      <RatesTable locale={locale} />
 
       {/* ── Interactive booking widget — client-rendered ── */}
-      <BookingWidget />
+      <BookingWidget locale={locale} />
     </>
   )
 }

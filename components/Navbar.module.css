@@ -38,7 +38,7 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 .link {
   font-size: 13px;
@@ -47,6 +47,13 @@
   white-space: nowrap;
 }
 .link:hover, .active { color: var(--cream); }
+
+/* Longer translated nav labels (fr/de/etc.) need a bit more breathing room
+   before the mobile menu breakpoint kicks in */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .links { gap: 0.65rem; }
+  .link { font-size: 12px; }
+}
 .cta {
   background: var(--terracotta);
   color: #fff !important;
@@ -58,6 +65,20 @@
   white-space: nowrap;
 }
 .cta:hover { background: #a84e20 !important; }
+
+.langSwitcherDesktop {
+  display: none;
+}
+.langSwitcherMobile {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 769px) {
+  .langSwitcherDesktop { display: block; }
+  .langSwitcherMobile { display: none; }
+}
+
 .burger {
   display: none;
   flex-direction: column;

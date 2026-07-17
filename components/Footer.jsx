@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { Link } from '../i18n/routing'
 import { SITE } from '../lib/seo'
 import styles from './Footer.module.css'
 
@@ -12,6 +13,9 @@ const PARTNERS = [
 ]
 
 export default function Footer() {
+  const t = useTranslations('nav')
+  const tf = useTranslations('footer')
+
   return (
     <footer className={styles.footer}>
       <div className={'wrap ' + styles.inner}>
@@ -28,24 +32,24 @@ export default function Footer() {
           />
           <div>
             <div className={styles.name}>Ethlathini Rest Camp</div>
-            <div className={styles.loc}>Memorial Gate Road · Hluhluwe · KwaZulu-Natal</div>
+            <div className={styles.loc}>{tf('addressLine')}</div>
           </div>
         </div>
 
         {/* Nav — two columns */}
         <nav className={styles.nav} aria-label="Footer navigation">
           <div className={styles.navCol}>
-            <Link href="/">Home</Link>
-            <Link href="/book">Book & rates</Link>
-            <Link href="/about">About</Link>
-            <Link href="/vision">Our Vision</Link>
-            <Link href="/dream">The Dream</Link>
+            <Link href="/">{t('home')}</Link>
+            <Link href="/book">{t('book')}</Link>
+            <Link href="/about">{t('about')}</Link>
+            <Link href="/vision">{t('vision')}</Link>
+            <Link href="/dream">{t('dream')}</Link>
           </div>
           <div className={styles.navCol}>
-            <Link href="/volunteer">Volunteer</Link>
-            <Link href="/faq">FAQ</Link>
-            <Link href="/find-us">Find us</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/volunteer">{t('volunteer')}</Link>
+            <Link href="/faq">{t('faq')}</Link>
+            <Link href="/find-us">{t('findUs')}</Link>
+            <Link href="/contact">{t('contact')}</Link>
           </div>
         </nav>
 
@@ -53,14 +57,14 @@ export default function Footer() {
         <div className={styles.contact}>
           <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">💬 WhatsApp us</a>
+          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">💬 {tf('whatsappUs')}</a>
         </div>
       </div>
 
       {/* Partners */}
       <div className={styles.partners}>
         <div className={'wrap ' + styles.partnersInner}>
-          <span className={styles.partnersLabel}>Our Partners</span>
+          <span className={styles.partnersLabel}>{tf('ourPartners')}</span>
           <div className={styles.partnersList}>
             {PARTNERS.map(p => (
               <a key={p.href} href={p.href} target="_blank" rel="noopener noreferrer" className={styles.partner}>
@@ -75,9 +79,9 @@ export default function Footer() {
       <div className={styles.base}>
         <div className={'wrap ' + styles.baseInner}>
           <span>© {new Date().getFullYear()} {SITE.name}</span>
-          <span>2km from Hluhluwe-iMfolozi Memorial Gate · Africa&apos;s oldest game reserve</span>
+          <span>{tf('gateDistance')}</span>
           <span>
-            Web design by{' '}
+            {tf('webDesignBy')}{' '}
             <a href="https://rollingrover.co.za" target="_blank" rel="noopener noreferrer">
               RollingRover Productions
             </a>
