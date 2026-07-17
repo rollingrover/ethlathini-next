@@ -11,7 +11,11 @@ const securityHeaders = [
   },
   {
     key: 'X-Frame-Options',
-    value: 'SAMEORIGIN',
+    value: 'ALLOW-FROM https://rollingrover.co.za',
+  },
+  {
+    key: 'Content-Security-Policy',
+    value: "frame-ancestors 'self' https://rollingrover.co.za https://www.rollingrover.co.za",
   },
   {
     key: 'Referrer-Policy',
@@ -33,7 +37,6 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // quality is set per-<Image> component via quality={80} prop
   },
 
   trailingSlash: false,
@@ -50,9 +53,6 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // Redirect apex domain → www for canonical consistency (Task C4)
-      // Note: This redirect works at Next.js level; also set in Vercel dashboard
-      // for DNS-level redirect (before Next.js handles the request).
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'ethlathini.co.za' }],
