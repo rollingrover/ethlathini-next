@@ -32,7 +32,7 @@
     "readFullStory": "Read the full story →",
     "whatsappUs": "💬 WhatsApp us",
     "emailUs": "✉️ Email us",
-    "openNow": "Open now",
+    "openNow": "Opening December 2026",
     "night": "night"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Mahogany & fig forest",
     "strip_big5": "Big 5 · 2km",
     "strip_coffee": "Coffee shop coming soon",
-    "split_eyebrow": "Now open",
+    "split_eyebrow": "Opening December 2026",
     "split_h2_line1": "The forest is ready.",
     "split_h2_line2": "Come park under it.",
     "split_p1": "Ethlathini sits on a hillside off the main road to Memorial Gate — a roadside surprise you'd never expect. Pull in and you're under the canopy of mahogany, wild fig, and tree aloe within seconds of leaving the tar.",
@@ -122,7 +122,7 @@
       { "label": "The Name",           "val": "\"Ethlathini\"",      "note": "In isiZulu: \"in the forest\"" },
       { "label": "Location",           "val": "Hluhluwe",            "note": "KwaZulu-Natal, South Africa" },
       { "label": "Distance to Gate",   "val": "2 km",                "note": "Memorial Gate, Hluhluwe-iMfolozi Park" },
-      { "label": "Open Now",           "val": "4 Overland Sites",    "note": "Self-contained campers only" }
+      { "label": "Opening December 2026", "val": "4 Overland Sites",    "note": "Self-contained campers only" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Progress",
     "building_h2": "What We Are Building",
-    "openNowLabel": "✅ Open Now",
+    "openNowLabel": "🗓️ Opening December 2026",
     "comingSoonLabel": "🚧 Coming Soon",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4 Overland Campsites", "alt": "Overland campsites" },
@@ -222,7 +222,7 @@
     "h1_line1": "Book your site",
     "h1_em": "in the forest",
     "hero_p": "4 cleared sites under mahogany, fig & tree aloe canopy, 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Firepits. Free firewood. Pure bush quiet.",
-    "notice": "🏕️ <strong>4 overland sites open now</strong> — ablutions under development, self-contained campers only. Chalets, coffee shop & restaurant coming soon.",
+    "notice": "🏕️ <strong>4 overland sites opening December 2026</strong> — ablutions under development, self-contained campers only. Chalets, coffee shop & restaurant coming soon.",
     "rates_eyebrow": "Camping Rates — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Campsite Rates & Pricing",
     "rates_intro": "Self-contained overland campsites in a mahogany and fig forest, 2km from Memorial Gate, Hluhluwe-iMfolozi Park. Direct booking only — no platform fees, no middleman.",

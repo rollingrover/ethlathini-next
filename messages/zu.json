@@ -32,7 +32,7 @@
     "readFullStory": "Funda indaba yonke →",
     "whatsappUs": "💬 Sithumele i-WhatsApp",
     "emailUs": "✉️ Sithumele i-imeyili",
-    "openNow": "Sivuliwe Manje",
+    "openNow": "Sizovulwa ngoDisemba 2026",
     "night": "ubusuku"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Ihlathi lemithombo ne-figs",
     "strip_big5": "Big 5 · 2km",
     "strip_coffee": "Ikhofi shop iyeza maduze",
-    "split_eyebrow": "Sivuliwe Manje",
+    "split_eyebrow": "Sizovulwa ngoDisemba 2026",
     "split_h2_line1": "Ihlathi selilungile.",
     "split_h2_line2": "Woza uzopaka ngaphansi kwalo.",
     "split_p1": "I-Ethlathini itholakala eqaqeni ngasemgwaqweni omkhulu oya e-Memorial Gate — okumangalisayo ohlangothini lomgwaqo ongeke ulindele. Ngena, futhi ngemuzuzu embalwa ngemuva kokushiya umgwaqo oshaywe ithiyela usuvele ungaphansi kwesivunulo semithombo, i-fig yasendle, ne-tree aloe.",
@@ -122,7 +122,7 @@
       { "label": "Igama",              "val": "\"Ethlathini\"",       "note": "NgesiZulu: \"ehlathini\"" },
       { "label": "Indawo",             "val": "Hluhluwe",             "note": "KwaZulu-Natal, iNingizimu Afrika" },
       { "label": "Ibanga esangweni",   "val": "2km",                  "note": "Memorial Gate, iPhaki iHluhluwe-iMfolozi" },
-      { "label": "Sivuliwe Manje",     "val": "Izindawo ze-Overland ezi-4", "note": "Abakampa abazimele ngokuphelele kuphela" }
+      { "label": "Sizovulwa ngoDisemba 2026",     "val": "Izindawo ze-Overland ezi-4", "note": "Abakampa abazimele ngokuphelele kuphela" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Inqubekelaphambili",
     "building_h2": "Esikwakhayo",
-    "openNowLabel": "✅ Sivuliwe Manje",
+    "openNowLabel": "🗓️ Sizovulwa ngoDisemba 2026",
     "comingSoonLabel": "🚧 Kuyeza Maduze",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "Amakamu ama-4 e-Overland", "alt": "Amakamu e-overland" },
@@ -222,7 +222,7 @@
     "h1_line1": "Bhukha Indawo Yakho",
     "h1_em": "Ehlathini",
     "hero_p": "Izindawo ezine ezisusiwe izihlahla ngaphansi kwesivunulo semithombo, ama-fig, ne-tree aloe, amakhilomitha ama-2 kusuka e-Memorial Gate, iPhaki iHluhluwe-iMfolozi. Izindawo zomlilo. Izinkuni zamahhala. Ukuthula okuphelele kwehlathi.",
-    "notice": "🏕️ <strong>Izindawo ezi-4 ze-overland sezivulwe manje</strong> — izindlu zangasese zisezakhiweni, abakampa abazimele ngokuphelele kuphela. Amachalethi, ikhofi shop, nendawo yokudlela kuyeza maduze.",
+    "notice": "🏕️ <strong>Izindawo ezi-4 ze-overland zizovulwa ngoDisemba 2026</strong> — izindlu zangasese zisezakhiweni, abakampa abazimele ngokuphelele kuphela. Amachalethi, ikhofi shop, nendawo yokudlela kuyeza maduze.",
     "rates_eyebrow": "Amanani Okukampa — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Amanani Ezindawo",
     "rates_intro": "Amakamu e-overland azimele ngokuphelele ehlathini lemithombo ne-figs, amakhilomitha ama-2 kusuka e-Memorial Gate, iPhaki iHluhluwe-iMfolozi. Ukubhukha ngokuqondile kuphela — akukho zindleko ze-platform, akukho mlamuli.",

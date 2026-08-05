@@ -32,7 +32,7 @@
     "readFullStory": "Leer la historia completa →",
     "whatsappUs": "💬 Escríbenos por WhatsApp",
     "emailUs": "✉️ Escríbenos un correo",
-    "openNow": "Abierto ahora",
+    "openNow": "Apertura en diciembre de 2026",
     "night": "noche"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Bosque de caobas e higueras",
     "strip_big5": "Big 5 · 2 km",
     "strip_coffee": "Cafetería próximamente",
-    "split_eyebrow": "Abierto ahora",
+    "split_eyebrow": "Apertura en diciembre de 2026",
     "split_h2_line1": "El bosque está listo.",
     "split_h2_line2": "Ven a acampar bajo él.",
     "split_p1": "Ethlathini se encuentra en una colina junto a la carretera principal hacia Memorial Gate — una sorpresa junto al camino que nunca esperarías. Entra, y a los pocos segundos de dejar el asfalto ya estarás bajo el dosel de caoba, higuera silvestre y aloe arbóreo.",
@@ -122,7 +122,7 @@
       { "label": "El nombre",              "val": "«Ethlathini»",         "note": "En isiZulu: «en el bosque»" },
       { "label": "Ubicación",              "val": "Hluhluwe",             "note": "KwaZulu-Natal, Sudáfrica" },
       { "label": "Distancia a la puerta",  "val": "2 km",                 "note": "Memorial Gate, Parque Hluhluwe-iMfolozi" },
-      { "label": "Abierto ahora",          "val": "4 sitios overland",    "note": "Solo campistas autosuficientes" }
+      { "label": "Apertura en diciembre de 2026",          "val": "4 sitios overland",    "note": "Solo campistas autosuficientes" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Progreso",
     "building_h2": "Lo que estamos construyendo",
-    "openNowLabel": "✅ Abierto ahora",
+    "openNowLabel": "🗓️ Apertura en diciembre de 2026",
     "comingSoonLabel": "🚧 Próximamente",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4 campamentos overland", "alt": "Campamentos overland" },
@@ -222,7 +222,7 @@
     "h1_line1": "Reserva tu sitio",
     "h1_em": "en el bosque",
     "hero_p": "4 sitios despejados bajo un dosel de caoba, higuera y aloe arbóreo, a 2 km de Memorial Gate, Parque Hluhluwe-iMfolozi. Fogatas. Leña gratuita. Pura tranquilidad del monte.",
-    "notice": "🏕️ <strong>4 sitios overland abiertos ahora</strong> — baños en construcción, solo campistas autosuficientes. Chalets, cafetería & restaurante próximamente.",
+    "notice": "🏕️ <strong>4 sitios overland abren en diciembre de 2026</strong> — baños en construcción, solo campistas autosuficientes. Chalets, cafetería & restaurante próximamente.",
     "rates_eyebrow": "Tarifas de campamento — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Tarifas de los sitios",
     "rates_intro": "Campamentos overland autosuficientes en un bosque de caobas e higueras, a 2 km de Memorial Gate, Parque Hluhluwe-iMfolozi. Solo reserva directa — sin comisiones de plataforma, sin intermediarios.",

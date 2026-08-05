@@ -32,7 +32,7 @@
     "readFullStory": "Lire l'histoire complète →",
     "whatsappUs": "💬 WhatsApp",
     "emailUs": "✉️ Nous écrire",
-    "openNow": "Ouvert maintenant",
+    "openNow": "Ouverture en décembre 2026",
     "night": "nuit"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Forêt d'acajous et de figuiers",
     "strip_big5": "Big 5 · 2 km",
     "strip_coffee": "Café bientôt ouvert",
-    "split_eyebrow": "Ouvert maintenant",
+    "split_eyebrow": "Ouverture en décembre 2026",
     "split_h2_line1": "La forêt est prête.",
     "split_h2_line2": "Venez vous y installer.",
     "split_p1": "Ethlathini se trouve sur une colline en bordure de la route principale menant à Memorial Gate — une surprise inattendue au bord de la route. Engagez-vous, et en quelques secondes après avoir quitté le bitume, vous voilà sous la canopée d'acajous, de figuiers sauvages et d'aloès arborescents.",
@@ -122,7 +122,7 @@
       { "label": "Le nom",                 "val": "« Ethlathini »",     "note": "En isiZulu : « dans la forêt »" },
       { "label": "Emplacement",            "val": "Hluhluwe",           "note": "KwaZulu-Natal, Afrique du Sud" },
       { "label": "Distance jusqu'au portail", "val": "2 km",             "note": "Memorial Gate, parc Hluhluwe-iMfolozi" },
-      { "label": "Ouvert maintenant",       "val": "4 emplacements overland", "note": "Campeurs autonomes uniquement" }
+      { "label": "Ouverture en décembre 2026",       "val": "4 emplacements overland", "note": "Campeurs autonomes uniquement" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Progrès",
     "building_h2": "Ce que nous construisons",
-    "openNowLabel": "✅ Ouvert maintenant",
+    "openNowLabel": "🗓️ Ouverture en décembre 2026",
     "comingSoonLabel": "🚧 Bientôt disponible",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4 campings overland", "alt": "Campings overland" },
@@ -222,7 +222,7 @@
     "h1_line1": "Réservez votre emplacement",
     "h1_em": "en forêt",
     "hero_p": "4 emplacements défrichés sous une canopée d'acajous, de figuiers et d'aloès arborescents, à 2 km de Memorial Gate, parc Hluhluwe-iMfolozi. Foyers. Bois gratuit. Calme absolu de la brousse.",
-    "notice": "🏕️ <strong>4 emplacements overland ouverts dès maintenant</strong> — sanitaires en construction, campeurs autonomes uniquement. Chalets, café & restaurant bientôt disponibles.",
+    "notice": "🏕️ <strong>4 emplacements overland ouvriront en décembre 2026</strong> — sanitaires en construction, campeurs autonomes uniquement. Chalets, café & restaurant bientôt disponibles.",
     "rates_eyebrow": "Tarifs de camping — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Tarifs des emplacements",
     "rates_intro": "Campings overland autonomes dans une forêt d'acajous et de figuiers, à 2 km de Memorial Gate, parc Hluhluwe-iMfolozi. Réservation directe uniquement — sans frais de plateforme, sans intermédiaire.",

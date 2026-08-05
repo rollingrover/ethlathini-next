@@ -32,7 +32,7 @@
     "readFullStory": "Ler a história completa →",
     "whatsappUs": "💬 Fale connosco no WhatsApp",
     "emailUs": "✉️ Envie-nos um email",
-    "openNow": "Aberto agora",
+    "openNow": "Abertura em dezembro de 2026",
     "night": "noite"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Floresta de mogno e figueiras",
     "strip_big5": "Big 5 · 2 km",
     "strip_coffee": "Cafetaria brevemente",
-    "split_eyebrow": "Aberto agora",
+    "split_eyebrow": "Abertura em dezembro de 2026",
     "split_h2_line1": "A floresta está pronta.",
     "split_h2_line2": "Venha acampar por baixo dela.",
     "split_p1": "Ethlathini fica numa colina junto à estrada principal para o Memorial Gate — uma surpresa à beira da estrada que nunca esperaria. Entre, e em poucos segundos depois de deixar o alcatrão já está debaixo do dossel de mogno, figueira selvagem e aloé arbórea.",
@@ -122,7 +122,7 @@
       { "label": "O nome",              "val": "«Ethlathini»",         "note": "Em isiZulu: «na floresta»" },
       { "label": "Localização",         "val": "Hluhluwe",             "note": "KwaZulu-Natal, África do Sul" },
       { "label": "Distância até ao portão", "val": "2 km",              "note": "Memorial Gate, Parque Hluhluwe-iMfolozi" },
-      { "label": "Aberto agora",        "val": "4 lugares overland",   "note": "Apenas campistas autossuficientes" }
+      { "label": "Abertura em dezembro de 2026",        "val": "4 lugares overland",   "note": "Apenas campistas autossuficientes" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Progresso",
     "building_h2": "O que estamos a construir",
-    "openNowLabel": "✅ Aberto agora",
+    "openNowLabel": "🗓️ Abertura em dezembro de 2026",
     "comingSoonLabel": "🚧 Brevemente",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4 acampamentos overland", "alt": "Acampamentos overland" },
@@ -222,7 +222,7 @@
     "h1_line1": "Reserve o seu lugar",
     "h1_em": "na floresta",
     "hero_p": "4 lugares desbravados debaixo de um dossel de mogno, figueira e aloé arbórea, a 2 km do Memorial Gate, Parque Hluhluwe-iMfolozi. Fogueiras. Lenha grátis. Tranquilidade pura do mato.",
-    "notice": "🏕️ <strong>4 lugares overland abertos agora</strong> — casas de banho em construção, apenas campistas autossuficientes. Chalés, cafetaria & restaurante brevemente.",
+    "notice": "🏕️ <strong>4 lugares overland abrem em dezembro de 2026</strong> — casas de banho em construção, apenas campistas autossuficientes. Chalés, cafetaria & restaurante brevemente.",
     "rates_eyebrow": "Tarifas de acampamento — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Tarifas dos lugares",
     "rates_intro": "Acampamentos overland autossuficientes numa floresta de mogno e figueiras, a 2 km do Memorial Gate, Parque Hluhluwe-iMfolozi. Apenas reserva direta — sem taxas de plataforma, sem intermediários.",

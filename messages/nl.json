@@ -32,7 +32,7 @@
     "readFullStory": "Lees het hele verhaal →",
     "whatsappUs": "💬 WhatsApp ons",
     "emailUs": "✉️ Mail ons",
-    "openNow": "Nu open",
+    "openNow": "Open in december 2026",
     "night": "nacht"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Mahonie- & vijgenbos",
     "strip_big5": "Big 5 · 2 km",
     "strip_coffee": "Koffiehuis binnenkort open",
-    "split_eyebrow": "Nu open",
+    "split_eyebrow": "Open in december 2026",
     "split_h2_line1": "Het bos is klaar.",
     "split_h2_line2": "Kom eronder parkeren.",
     "split_p1": "Ethlathini ligt op een heuvel naast de hoofdweg naar Memorial Gate — een verrassing langs de weg die je niet had verwacht. Rijd naar binnen en binnen enkele seconden nadat je het asfalt hebt verlaten, sta je al onder het bladerdak van mahonie, wilde vijg en boomaalwijn.",
@@ -122,7 +122,7 @@
       { "label": "De naam",           "val": "„Ethlathini”",        "note": "In isiZulu: „in het bos”" },
       { "label": "Locatie",           "val": "Hluhluwe",            "note": "KwaZulu-Natal, Zuid-Afrika" },
       { "label": "Afstand tot poort", "val": "2 km",                "note": "Memorial Gate, Hluhluwe-iMfolozi Park" },
-      { "label": "Nu open",           "val": "4 overland-plekken",  "note": "Alleen voor zelfvoorzienende kampeerders" }
+      { "label": "Open in december 2026", "val": "4 overland-plekken",  "note": "Alleen voor zelfvoorzienende kampeerders" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Voortgang",
     "building_h2": "Wat we bouwen",
-    "openNowLabel": "✅ Nu open",
+    "openNowLabel": "🗓️ Open in december 2026",
     "comingSoonLabel": "🚧 Binnenkort",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4 overland kampeerplekken", "alt": "Overland kampeerplekken" },
@@ -222,7 +222,7 @@
     "h1_line1": "Boek je plek",
     "h1_em": "in het bos",
     "hero_p": "4 ontgonnen plekken onder mahonie-, vijgen- en boomaalwijn-bladerdak, 2 km van Memorial Gate, Hluhluwe-iMfolozi Park. Vuurplaatsen. Gratis brandhout. Pure bosstilte.",
-    "notice": "🏕️ <strong>4 overland-plekken nu open</strong> — sanitair in aanbouw, alleen zelfvoorzienende kampeerders. Chalets, koffiehuis & restaurant komen binnenkort.",
+    "notice": "🏕️ <strong>4 overland-plekken openen in december 2026</strong> — sanitair in aanbouw, alleen zelfvoorzienende kampeerders. Chalets, koffiehuis & restaurant komen binnenkort.",
     "rates_eyebrow": "Kamperingstarieven — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Tarieven kampeerplekken",
     "rates_intro": "Zelfvoorzienende overland kampeerplekken in een mahonie- en vijgenbos, 2 km van Memorial Gate, Hluhluwe-iMfolozi Park. Alleen rechtstreeks boeken — geen platformkosten, geen tussenpersoon.",

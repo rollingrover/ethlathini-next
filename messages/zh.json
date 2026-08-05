@@ -32,7 +32,7 @@
     "readFullStory": "阅读完整故事 →",
     "whatsappUs": "💬 WhatsApp 联系我们",
     "emailUs": "✉️ 给我们发邮件",
-    "openNow": "现已开放",
+    "openNow": "2026年12月开放",
     "night": "晚"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "桃花心木与无花果林",
     "strip_big5": "五大兽 · 2公里",
     "strip_coffee": "咖啡馆即将开业",
-    "split_eyebrow": "现已开放",
+    "split_eyebrow": "2026年12月开放",
     "split_h2_line1": "森林已经准备好了。",
     "split_h2_line2": "快来这里安营吧。",
     "split_p1": "Ethlathini 坐落在通往 Memorial Gate 主路旁的一座山丘上——一个你从未想到会在路边遇见的惊喜。驶入营地,离开柏油路不过几秒钟,便已置身于桃花心木、野生无花果与树芦荟的林荫之下。",
@@ -122,7 +122,7 @@
       { "label": "名字含义", "val": "「Ethlathini」",   "note": "祖鲁语:「在森林里」" },
       { "label": "位置",     "val": "胡卢韦",           "note": "南非,夸祖鲁-纳塔尔省" },
       { "label": "距大门距离", "val": "2 公里",         "note": "Memorial Gate,胡卢韦-伊姆福洛齐公园" },
-      { "label": "现已开放", "val": "4个越野营地",      "note": "仅限自给自足露营者" }
+      { "label": "2026年12月开放", "val": "4个越野营地",      "note": "仅限自给自足露营者" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "建设进展",
     "building_h2": "我们正在建设的项目",
-    "openNowLabel": "✅ 现已开放",
+    "openNowLabel": "🗓️ 2026年12月开放",
     "comingSoonLabel": "🚧 即将推出",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4个越野营地", "alt": "越野营地" },
@@ -222,7 +222,7 @@
     "h1_line1": "预订您的营地",
     "h1_em": "在森林中",
     "hero_p": "4片开垦出的营地,坐落于桃花心木、无花果与树芦荟的林荫之下,距 Memorial Gate 2公里,毗邻胡卢韦-伊姆福洛齐公园。设有火坑,免费柴火,尽享灌木丛的纯粹宁静。",
-    "notice": "🏕️ <strong>4个越野营地现已开放</strong>——卫浴设施正在建设中,仅限自给自足的露营者。小木屋、咖啡馆与餐厅即将推出。",
+    "notice": "🏕️ <strong>4个越野营地将于2026年12月开放</strong>——卫浴设施正在建设中,仅限自给自足的露营者。小木屋、咖啡馆与餐厅即将推出。",
     "rates_eyebrow": "露营价格 — 南非夸祖鲁-纳塔尔省胡卢韦",
     "rates_title": "营地价格",
     "rates_intro": "自给自足的越野营地,坐落于桃花心木与无花果林中,距 Memorial Gate 2公里,毗邻胡卢韦-伊姆福洛齐公园。仅接受直接预订——无平台费用,无中间商。",

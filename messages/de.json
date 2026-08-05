@@ -32,7 +32,7 @@
     "readFullStory": "Die ganze Geschichte lesen →",
     "whatsappUs": "💬 WhatsApp uns",
     "emailUs": "✉️ E-Mail senden",
-    "openNow": "Jetzt geöffnet",
+    "openNow": "Eröffnung Dezember 2026",
     "night": "Nacht"
   },
   "home": {
@@ -48,7 +48,7 @@
     "strip_forest": "Mahagoni- & Feigenwald",
     "strip_big5": "Big 5 · 2 km",
     "strip_coffee": "Café bald eröffnet",
-    "split_eyebrow": "Jetzt geöffnet",
+    "split_eyebrow": "Eröffnung Dezember 2026",
     "split_h2_line1": "Der Wald ist bereit.",
     "split_h2_line2": "Komm, parke darunter.",
     "split_p1": "Ethlathini liegt an einem Hang neben der Hauptstraße zum Memorial Gate — eine Überraschung am Straßenrand, mit der man nicht rechnet. Fahr hinein, und Sekunden nachdem du den Teer verlassen hast, stehst du schon unter dem Blätterdach aus Mahagoni, Wildfeige und Baumaloe.",
@@ -122,7 +122,7 @@
       { "label": "Der Name",           "val": "„Ethlathini“",         "note": "Auf isiZulu: „im Wald“" },
       { "label": "Lage",               "val": "Hluhluwe",             "note": "KwaZulu-Natal, Südafrika" },
       { "label": "Entfernung zum Tor", "val": "2 km",                 "note": "Memorial Gate, Hluhluwe-iMfolozi Park" },
-      { "label": "Jetzt geöffnet",     "val": "4 Overland-Plätze",    "note": "Nur für autarke Camper" }
+      { "label": "Eröffnung Dezember 2026",     "val": "4 Overland-Plätze",    "note": "Nur für autarke Camper" }
     ]
   },
   "vision": {
@@ -149,7 +149,7 @@
     ],
     "building_eyebrow": "Fortschritt",
     "building_h2": "Was wir aufbauen",
-    "openNowLabel": "✅ Jetzt geöffnet",
+    "openNowLabel": "🗓️ Eröffnung Dezember 2026",
     "comingSoonLabel": "🚧 Demnächst",
     "open_now": [
       { "src": "/images/icons/overland-campsite-booking-icon.png", "label": "4 Overland-Campingplätze", "alt": "Overland-Campingplätze" },
@@ -222,7 +222,7 @@
     "h1_line1": "Buche deinen Platz",
     "h1_em": "im Wald",
     "hero_p": "4 gerodete Plätze unter Mahagoni-, Feigen- und Baumaloe-Blätterdach, 2 km vom Memorial Gate, Hluhluwe-iMfolozi Park entfernt. Feuerstellen. Kostenloses Feuerholz. Reine Buschstille.",
-    "notice": "🏕️ <strong>4 Overland-Plätze jetzt geöffnet</strong> — Sanitäranlagen im Bau, nur autarke Camper. Chalets, Café & Restaurant folgen bald.",
+    "notice": "🏕️ <strong>4 Overland-Plätze eröffnen im Dezember 2026</strong> — Sanitäranlagen im Bau, nur autarke Camper. Chalets, Café & Restaurant folgen bald.",
     "rates_eyebrow": "Campingpreise — Hluhluwe, KwaZulu-Natal",
     "rates_title": "Campingplatzpreise",
     "rates_intro": "Autarke Overland-Campingplätze in einem Mahagoni- und Feigenwald, 2 km vom Memorial Gate, Hluhluwe-iMfolozi Park entfernt. Nur Direktbuchung — keine Plattformgebühren, kein Zwischenhändler.",
