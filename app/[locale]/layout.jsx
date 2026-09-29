@@ -59,6 +59,9 @@ export async function generateMetadata({ params }) {
       shortcut: '/favicon.ico',
       apple: '/favicon_180x180.png',
     },
+    verification: {
+      google: 'nglJoEM50BkNJh8ElvLPWLJTflv1WScCmP5y3KNJtLQ',
+    },
   }
 }
 
